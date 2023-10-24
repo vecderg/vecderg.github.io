@@ -37,13 +37,6 @@
         font-size:24px;
 		padding:20px;
 	  }
-	  .dropdown{
-		display:none;
-	  }
-	  .topbutton{
-		vertical-align: super;
-		text-align:center;
-	  }
 	  .buttonlink{
 		color:white;
         font-size:24px;
@@ -64,8 +57,10 @@
 		padding-left:5px;
 		padding-right:5px;
 	  }
-	  .topbutton:hover .buttondrop{
-		display:block;
+	  .topbutton{
+		display:inline;
+		vertical-align: super;
+		text-align:center;
 	  }
       .smollink {
         color:dodgerblue;
@@ -86,61 +81,54 @@
 
 </head>
 
-<!-- BODY -->
-
-<center>
+<center style="background:none;">
 	
-	<a class="normal"; style="font-size:50px"; href="https://vecderg.com">VECDERG WEBSITE</a>
+	<b><a class="normal"; style="font-size:50px;font-family:sans-serif;text-shadow:5px 5px black"; href="index.html">VECDERG WEBSITE</a></b>
 	
 </center>
+
+
+<!-- BODY -->
 
 <body class="backgrounded">
 
 <a class="smollink"  href="https://vecderg.com">vecderg website</a>
 
+<!-- BUTTONS -->
+
 <div>
 	
 	<center style="border-style:double;border-color:white;border-width:5px;padding:5px">
 
-	<!-- BUTTONS -->
-	<table>
-		<tr>
-			<td class="topbutton">
-				<a class="buttonlink" href="index.html">Home</a>
-			</td>
-			
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">Characters</a>
-			</td>
-		
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">Games</a>
-				<a class="dropdown buttondrop" href="tests.html">DracoFighter</a>
-				<a class="dropdown buttondrop" href="tests.html">Demon's Heir</a>
-			</td>
-			
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">Conlangs</a>
-				<a class="dropdown buttondrop" href="tests.html">Kaliwe</a>
-			</td>
-			
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">Videos</a>
-			</td>
-			
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">Links</a>
-			</td>
-			
-			<td class="topbutton">
-				<a class="buttonlink" href="tests.html">About</a>
-			</td>
-		</tr>
-	</table>
+	<div class="topbutton">
+		<a class="buttonlink" href="index.html">Home</a>
+	</div>
+	
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">Characters</a>
+	</div>
+
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">Games</a>
+	</div>
+	
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">Conlangs</a>
+	</div>
+	
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">Videos</a>
+	</div>
+	
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">Links</a>
+	</div>
+	
+	<div class="topbutton">
+		<a class="buttonlink" href="tests.html">About</a>
+	</div>
 
 	</center>
-
-
 
 	<hr style="height:1px;background-color:white"> </hr>
 
