@@ -4,9 +4,20 @@
   .normal {
 	color: white;
 	padding:5px;
+	padding-left:10px;
 	font-size:24px;
+	font-family:Georgia, serif;
 	text-align:left;
 	word-break:break-word;
+  }
+  .normal:visited{
+	color:white;
+  }
+  a {
+	color:dodgerblue;
+  }
+  a:visited{
+	color:violet;
   }
   .doubleborder{
 	border-style:double;
@@ -36,6 +47,9 @@
 	border-width:5px;
 	padding-left:5px;
 	padding-right:5px;
+  }
+  .buttonlink:visited{
+    color:white;
   }
   .buttonlink:hover{
 	color:white;
