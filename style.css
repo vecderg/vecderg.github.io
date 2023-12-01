@@ -87,7 +87,6 @@
   border-style:inset;
   border-color:white;
   border-width:5px;
-  -webkit-backface-visibility: hidden;
   }
  .rightnav {
   height: 60%; 
@@ -102,7 +101,6 @@
   border-style:inset;
   border-color:white;
   border-width:5px;
-  -webkit-backface-visibility: hidden;
   }
   .sidelink {
 	color: white;
