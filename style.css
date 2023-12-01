@@ -75,6 +75,46 @@
 	background-color:black;
 	width:60vw;
   }
+  .sidenav {
+  height: 60%; /* Full-height: remove this if you want "auto" height */
+  width: 15vw; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  margin-left: 1vw;
+  margin-top: 10vw;
+  background-color: #111; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  border-style:inset;
+  border-color:white;
+  border-width:5px;
+  }
+ .rightnav {
+  height: 60%; 
+  width: 15vw;
+  position: fixed; 
+  z-index: 1;
+  right:0;
+  margin-right:1vw;
+  margin-top: 10%;
+  background-color: #111;
+  overflow-x: hidden;
+  border-style:inset;
+  border-color:white;
+  border-width:5px;
+  }
+  .sidelink {
+	color: white;
+	padding:5px;
+	padding-left:10px;
+	font-size:1.5vw;
+	font-family:Georgia, serif;
+	text-align:left;
+	word-break:break-word;
+	line-height:1.5;
+  }
+  .sidelink:visited{
+	color:white;
+  }
   .backgrounded {
 	background-color:black;
 	background-image:url('img/sculk.jpg');
