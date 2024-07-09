@@ -14,11 +14,30 @@
 	color:white;
   }
   a {
-	color:dodgerblue;
+	color:skyblue;
   }
   a:visited{
 	color:violet;
   }
+  
+  h1 {
+	color: white;
+	padding:5px;
+	padding-left:10px;
+	font-size:32px;
+	font-family:Georgia, serif;
+	word-break:break-word;
+  }
+  
+  h2 {
+	color: white;
+	padding:5px;
+	padding-left:10px;
+	font-size:28px;
+	font-family:Georgia, serif;
+	word-break:break-word;
+  }
+  
   .doubleborder{
 	border-style:double;
 	border-color:white;
