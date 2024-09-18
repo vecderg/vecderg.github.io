@@ -5,7 +5,7 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-    Wed, Sep 18 2024 21:00:00 +0000
+    Wed, Sep 18 2024 21:30:00 +0000
   </lastBuildDate>
 <!-- TEMPLATE
   <item>
@@ -21,18 +21,6 @@
     </pubDate>
   </item>
 -->
-<item>
-    <title>test 4</title>
-    <content:encoded><![CDATA[
-		<p class="normal">
-			testing again
-		</p>
-    ]]></content:encoded>
-    <link>https://vecderg.github.io/posts/posts4.html</link>
-    <pubDate>
-      Wed, Sep 18 2024 21:30:00 +0000
-    </pubDate>
-</item>
   
  <item>
     <title>On DracoFighter 2</title>
@@ -197,7 +185,7 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts2.html</link>
     <pubDate>
-      Wed, Sep 18 2024 20:37:29 +0000
+      Wed, Sep 18 2024 20:36:29 +0000
     </pubDate>
   </item>
   
@@ -312,7 +300,7 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts1.html</link>
     <pubDate>
-      Wed, Sep 18 2024 20:37:29 +0000
+      Wed, Sep 18 2024 20:35:29 +0000
     </pubDate>
   </item>
 </channel>
