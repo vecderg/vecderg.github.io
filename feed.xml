@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>Vecderg Github RSS Feed</title>
   <description>Updates on my posts</description>
@@ -11,7 +11,10 @@
   
  <item>
     <title>On DracoFighter 2</title>
-    <content type="html"><![CDATA[
+	<summary>
+      Summary and news on DracoFighter 2.
+    </summary>
+    <content:encoded><![CDATA[
 		<p class="normal" style="font-size:20px">
 		September 17, 2024 - Published 
 		</p>
@@ -121,7 +124,7 @@
 		<br />
 		</p>
 
-    ]]></content>
+    ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts3.html</link>
     <pubDate>
       Wed, Sep 18 2024 02:45:37 +0000
@@ -130,7 +133,10 @@
   
   <item>
     <title>On Cohost</title>
-    <content type="html"><![CDATA[
+	<summary>
+      Thoughts after Cohost closed down. Includes update on BlueSky and Dasopya, my auxlang.
+    </summary>
+    <content:encoded><![CDATA[
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
 		</p>
@@ -169,7 +175,7 @@
 		<br />
 		As always, thank you all for the support.
 		</p>
-    ]]></content>
+    ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts2.html</link>
     <pubDate>
       Fri, Sep 13 2024 05:45:37 +0000
@@ -178,7 +184,10 @@
   
   <item>
     <title>Archive</title>
-    <content type="html"><![CDATA[
+	<summary>
+      Archive of previous updates before RSS 
+    </summary>
+    <content:encoded><![CDATA[
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
 		</p>
@@ -284,7 +293,7 @@
 		<a href="https://www.youtube.com/watch?v=K5xLTMnYEPw" target="_blank">Video - Ido for Beginners pt.3 (Youtube)</a><br />
 		<br />
 		</p>
-    ]]></content>
+    ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts1.html</link>
     <pubDate>
       Fri, Sep 13 2024 05:45:37 +0000
