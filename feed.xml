@@ -22,28 +22,15 @@
   </item>
 -->
 <item>
-    <title>test 3</title>
+    <title>test 4</title>
     <content:encoded><![CDATA[
 		<p class="normal">
-			This shall surely work as well!
+			testing again
 		</p>
     ]]></content:encoded>
-    <link>https://vecderg.github.io/</link>
+    <link>https://vecderg.github.io/posts/posts4.html</link>
     <pubDate>
-      Wed, Sep 18 2024 21:00:00 +0000
-    </pubDate>
-</item>
-
-<item>
-    <title>test 2</title>
-    <content:encoded><![CDATA[
-		<p class="normal">
-			This shall surely work!
-		</p>
-    ]]></content:encoded>
-    <link>https://vecderg.github.io/</link>
-    <pubDate>
-      Wed, Sep 18 2024 21:00:00 +0000
+      Wed, Sep 18 2024 21:30:00 +0000
     </pubDate>
 </item>
   
