@@ -11,7 +11,7 @@
   
  <item>
     <title>On DracoFighter 2</title>
-    <description>
+    <content type="html">
 		<p class="normal" style="font-size:20px">
 		September 17, 2024 - Published 
 		</p>
@@ -121,7 +121,7 @@
 		<br />
 		</p>
 
-    </description>
+    </content>
     <link>https://vecderg.github.io/posts/posts3.html</link>
     <pubDate>
       Wed, Sep 18 2024 02:45:37 +0000
@@ -130,7 +130,7 @@
   
   <item>
     <title>On Cohost</title>
-    <description>
+    <content type="html">
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
 		</p>
@@ -169,7 +169,7 @@
 		<br />
 		As always, thank you all for the support.
 		</p>
-    </description>
+    </content>
     <link>https://vecderg.github.io/posts/posts2.html</link>
     <pubDate>
       Fri, Sep 13 2024 05:45:37 +0000
@@ -178,7 +178,7 @@
   
   <item>
     <title>Archive</title>
-    <description>
+    <content type="html">
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
 		</p>
@@ -284,7 +284,7 @@
 		<a href="https://www.youtube.com/watch?v=K5xLTMnYEPw" target="_blank">Video - Ido for Beginners pt.3 (Youtube)</a><br />
 		<br />
 		</p>
-    </description>
+    </content>
     <link>https://vecderg.github.io/posts/posts1.html</link>
     <pubDate>
       Fri, Sep 13 2024 05:45:37 +0000
