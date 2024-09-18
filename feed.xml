@@ -5,15 +5,12 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-    Wed, Sep 18 2024 20:23:34 +0000
+    Wed, Sep 18 2024 20:37:29 +0000
   </lastBuildDate>
-  <ttl>20000</ttl>
+  <ttl>1</ttl>
 <!-- TEMPLATE
   <item>
     <title>Insert Title</title>
-	<summary>
-      Insert Summary
-    </summary>
     <content:encoded><![CDATA[
 		<p class="normal">
 		
@@ -25,27 +22,21 @@
     </pubDate>
   </item>
 -->
-  <item>
-    <title>test</title>
-	<summary>
-      hi sorry i really need to check if this is working
-    </summary>
+<item>
+    <title>test 2</title>
     <content:encoded><![CDATA[
 		<p class="normal">
-		
+			This shall surely work!
 		</p>
     ]]></content:encoded>
     <link>https://vecderg.github.io/</link>
     <pubDate>
-      Wed, Sep 18 2024 20:23:34 +0000
+      Wed, Sep 18 2024 20:37:29 +0000
     </pubDate>
   </item>
   
  <item>
     <title>On DracoFighter 2</title>
-	<summary>
-      Summary and news on DracoFighter 2.
-    </summary>
     <content:encoded><![CDATA[
 		<p class="normal" style="font-size:20px">
 		September 17, 2024 - Published 
@@ -159,15 +150,12 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts3.html</link>
     <pubDate>
-      Wed, Sep 18 2024 02:45:37 +0000
+      Wed, Sep 18 2024 20:37:29 +0000
     </pubDate>
   </item>
   
   <item>
     <title>On Cohost</title>
-	<summary>
-      Thoughts after Cohost closed down. Includes update on BlueSky and Dasopya, my auxlang.
-    </summary>
     <content:encoded><![CDATA[
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
@@ -210,15 +198,12 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts2.html</link>
     <pubDate>
-      Fri, Sep 13 2024 05:45:37 +0000
+      Wed, Sep 18 2024 20:37:29 +0000
     </pubDate>
   </item>
   
   <item>
     <title>Archive</title>
-	<summary>
-      Archive of previous updates before RSS 
-    </summary>
     <content:encoded><![CDATA[
       <p class="normal" style="font-size:20px">
 		September 12, 2024 - Published 
@@ -328,7 +313,7 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts1.html</link>
     <pubDate>
-      Fri, Sep 13 2024 05:45:37 +0000
+      Wed, Sep 18 2024 20:37:29 +0000
     </pubDate>
   </item>
 </channel>
