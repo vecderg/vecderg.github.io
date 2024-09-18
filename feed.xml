@@ -5,14 +5,122 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-    Wed, Sep 18 2024 18:52:23 +0000
+    Wed, Sep 18 2024 19:12:34 +0000
   </lastBuildDate>
   <ttl>20000</ttl>
   
  <item>
     <title>On DracoFighter 2</title>
     <description>
-      Summary and news on DracoFighter 2.
+		<p class="normal" style="font-size:20px">
+		September 17, 2024 - Published 
+		</p>
+      <p class="normal">
+		<b>SUMMARY: DracoFighter 2 is in development, has no engine yet but 7/8 of characters have fully designed movesets with 5.5/8 fully sprited. Everything else is still in planning stages.</b>
+		<br />
+		<br />
+		Like a DUMMY I forgot to give an update on my most major project in my last post, but that's 
+		OK because this probably deserves its own post anyway. Since this is the only real mention 
+		of DracoFighter 2 on this site so far, I'm going to summarize everything from DracoFighter 1 
+		to bring everyone up to speed.
+		<br />
+		<br />
+		--ABOUT DRACOFIGHTER 1--
+		<br />
+		<br />
+		DracoFighter is a game I launched on 
+		<a href="https://store.steampowered.com/app/2027810/DracoFighter" target="_blank">Steam</a> 
+		(and Itch and Google Play Store) marketed as a fighting game for beginners. It's also my 
+		dream project, my biggest solo project (game or otherwise), and many other things that I 
+		could spend 3 whole articles talking about. 
+		<br />
+		<br />
+		But essentially, it's a 2D fighter meant to <b>bare down the genre to the most essential parts</b>, 
+		without resorting to something gimmicky (like Divekick) or dry (like Footsies). Nothing 
+		against those games since they deliver perfectly on what they were going for, but they didn't 
+		deliver the experience that <i>I</i> was looking for, which was a fully-fledged fighting game 
+		that <i>felt</i> like a traditional fighting game, fully playable on mobile devices.
+		<br />
+		<br />
+		DracoFighter is a finished game, but it missed the mark in some areas. It didn't have inputs 
+		for up/down to make mobile inputs simpler, but that made jumping/blocking unintuitive for 
+		many players. It also had no online play, which killed the possibility of any real widespread 
+		playerbase. Since rollback is a necessity nowadays, I would have to rebuild the game in an 
+		entirely new engine to make it compatible with rollback. So... why not just do that for a new game?
+		<br />
+		<br />
+		--DRACOFIGHTER 2--
+		<br />
+		<br />
+		Many people were surprised that I was so quick to start a DracoFighter 2, but to be honest, 
+		I wanted DracoFighter 2 before Dracofighter 1 even began development. That's because internally, 
+		I actually referred to the first game as DracoFighter Zero -- the PREQUEL to the actual game.
+		<br />
+		<br />
+		The original idea for the game had Draco travel to the past with other dragons to fight against 
+		the dinosaurs, for reasons I was still developing. However, making my first fighting game have 
+		like 8 different characters was very much outside a reasonable scope, so I downsized the cast to 
+		4 and wrote the story to happen as an explanation for why he went back in time. This very much 
+		worked out in my favor!  
+		<br />
+		<br />
+		DracoFighter 2 is the fully-fledged sequel to DracoFighter 1, planned to have a base cast of 8 characters, longer story, more singleplayer content, and online play with rollback netcode. To make it possible, I'm reusing knowledge/assets from the first game and building on it to feel more like a fully-featured fighting game while still being aimed towards beginners (though I may leave that out of the marketing this time -- I don't think people like buying games that call them a beginner lol).
+		<br />
+		<br />
+		I'm still keeping some features under wraps for announcements later on, but I've mentioned that: 1) there are now only 2 attack buttons (Attack/Special) and 4 directions (U/D/L/R), 2) game mechanics are 90% the same, but a super armor mechanic is being added + jumps are universal and beat grabs, 3) mirroring the 8 base characters, there are 8 secret characters planned, which may be added as free DLC rather than base-game depending on how development goes.
+		<br />
+		<br />
+		HOWEVER, there is a very big, very awkward issue here.<br />
+		And that's that I'm spriting a game that doesn't have an engine!
+		<br />
+		<br />
+		--THE ENGINE ISSUE--
+		<br />
+		<br />
+		There is no fighting game engine currently on the market that 1) fits my needs and 2) is complete, so I've been working on what I can while waiting for these engines to be finished. There are a couple of options, but there is a chance that I might have to just make my own from scratch, which isn't ideal for a number of reasons. 
+		<br />
+		<br />
+		We all know networking is hard, especially when you have 0 experience making an online game! But it also comes with other issues that aren't just about making it function -- how do I create a secure system that prevents hackers? If there's a serious bug in the engine, can I be relied upon to fix it? What if I work in Godot, which is an open source engine that can be easily decompiled? If there's a reporting system, who reviews them?
+		<br />
+		<br />
+		Once online is introduced, especially with random players, there are a ton of practical issues where it becomes very unrealistic for a single person to manage everything, especially with no experience. Even the 20 person Discord server for DracoFighter got raided by people who thought it was funny to sling racial slurs, and I couldn't fix it in a timely manner because I was asleep and didn't think it was necessary to appoint any moderators for such a small server...
+		<br />
+		<br />
+		Anyway, my point is that it works a lot better if I work on an engine made by other people who are more experienced that can be reached out to for help, though I may also have to figure out a way sometime to build a team, even if it introduces even more issues (where do I get the money to pay people a full wage!).
+		<br />
+		<br />
+		--ACTUAL UPDATES--
+		<br />
+		<br />
+		Currently, I've been modding new characters into the DracoFighter 1 engine just to test out sprites and movesets, which has been working very well. This build cannot be released due to how buggy it is, but has allowed me to advance a lot of the game despite not having a real engine to build off of. I may release this build as an exclusive thing for DF2 purchasers in the future if people are really interested? Either way, if you see footage of DracoFighter 2 at this point in time, it's probably in this frankenstein of an engine.
+		<br />
+		<br />
+		Speaking of which, here is the first video I uploaded to Bluesky of DracoFighter 2 gameplay:
+		<a href="https://bsky.app/profile/vecdev.bsky.social/post/3l3y6wkjzda2t" target="_blank">https://bsky.app/profile/vecdev.bsky.social/post/3l3y6wkjzda2t</a>
+		<br />
+		<br />
+		As for the confirmed characters:<br />
+		Draco, Plexie, BiOS, Cyrus - DracoFighter 1 characters
+		<br />
+		TREX, RAPTOR, STEGO, DILO - DracoFighter 2 newcomers
+		<br />
+		<br />
+		(They are already named, just won't be announced yet &lt;3)
+		<br />
+		<br />
+		Needs finished moveset design: Cyrus <br />
+		Needs considerable number of sprites: RAPTOR (50% finished), DILO (5%), Cyrus (25%)
+		<br />
+		<br />
+		I'm VERY happy with how the currently-finished characters play and animate, and I'm still very excited to show it to the wider world. The reason Cyrus is lagging behind is because unlike the other DracoFighter 1 characters, I've never been fully satisfied with how he played. I'm probably keeping his updates simple, but they still need implementation and testing.
+		<br />
+		<br />
+		Either way, thank you very much for reading! If you want to follow DracoFighter, you can always follow my <a href="https://bsky.app/profile/vecdev.bsky.social/" target="_blank">Bluesky dev account</a>, 
+		but I'll be continuing to note major updates here.
+		<br />
+		<br />
+		</p>
+
     </description>
     <link>https://vecderg.github.io/posts/posts3.html</link>
     <pubDate>
@@ -23,7 +131,44 @@
   <item>
     <title>On Cohost</title>
     <description>
-      Thoughts after Cohost closed down. Includes update on BlueSky and Dasopya, my auxlang.
+      <p class="normal" style="font-size:20px">
+		September 12, 2024 - Published 
+		</p>
+
+		<p class="normal">
+		With Cohost going down, it is essentially the second time I have to move my digital home elsewhere.
+		This event is rather big for me, not due to the event alone (which is big, but the website only
+		existed for about 2 years and was never colossal), but due to what it signifies for me as someone
+		whose home is on the internet.
+		<br />
+		<br />
+		I'm learning how RSS feeds work so this website can be somewhere I connect with more people,
+		because it is now one of the few places I can properly express myself. I've written
+		<a href="../articles/article1.html">my first article</a> on this website to fully vent out 
+		my feelings on the situation, so note that it'll be more negative and dramatic than my usual
+		content.
+		<br />
+		<br />
+		Otherwise, the most notable updates are that 1) I'll be more active on BlueSky, where I created
+		<a href="https://bsky.app/profile/vecdev.bsky.social" target="_blank">a new dev account</a> 
+		(Vecdev) for anyone only interested in my gamedev endeavors. Of course, you can still
+		find me on Bluesky under <a href="https://bsky.app/profile/vecderg.bsky.social" target="_blank">Vecderg</a> 
+		for my general content.
+		<br />
+		<br />
+		2) I've been making great progress on my conlang, <a href="https://www.dasopya.com/" target="_blank">Dasopya</a>!
+		I briefly announced this on Cohost, but it's a language made for international communication where
+		every word is made from scratch (a priori). I will be continuing to promote and update on it, so 
+		expect that in the future -- it currently has over 700 words!
+		<br />
+		<br />
+		The main website is fully laid out to introduce the language, but more interestingly, I also have a 
+		converter + font for the alternate writing system! You can find both at this itch page:
+		<a href="https://vecderg.itch.io/pyalibu" target="_blank">https://vecderg.itch.io/pyalibu</a>
+		<br />
+		<br />
+		As always, thank you all for the support.
+		</p>
     </description>
     <link>https://vecderg.github.io/posts/posts2.html</link>
     <pubDate>
@@ -34,7 +179,111 @@
   <item>
     <title>Archive</title>
     <description>
-      Archive of previous updates before RSS 
+      <p class="normal" style="font-size:20px">
+		September 12, 2024 - Published 
+		</p>
+
+		<p class="normal">
+		This is to archive all the old update posts before the RSS Feed was added. These links used to display on the front page,
+		but some of them may become broken in the future.
+		</p>
+
+		<p class="normal">
+		<a href="https://bsky.app/profile/vecdev.bsky.social/post/3l3txmtsuiv26" target="_blank">Announcement - New Dev Account! (Bluesky)</a><br />
+		<br />
+		<a href="https://itaku.ee/images/917362" target="_blank">Art - Gulusgammamon Choccy Milk (Itaku)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/7359441-dasopya-the-next-o" target="_blank">Conlang - Dasopya Announcement (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/7262692-sketch-dump" target="_blank">Art - Sketch Dump (Cohost)</a><br />
+		<br />
+		<a href="https://itaku.ee/posts/139305" target="_blank">Art - Artfight Attacks 3 (Itaku)</a><br />
+		<br />
+		<a href="https://itaku.ee/posts/138038" target="_blank">Art - Artfight Attacks 2 (Itaku)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6860304-my-new-450-word-lang" target="_blank">Conlang - Taynmoga Announcement (Cohost)</a><br />
+		<br />
+		<a href="https://itaku.ee/posts/137603" target="_blank">Art - Artfight Attacks 1 (Itaku)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/artphototrad" target="_blank">Article - How to Take Photos of Traditional Art</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6325949-sona-partment-24-5" target="_blank">Art - SonaPartment #24.5 (Cohost)</a><br />
+		<br />
+		<a href="https://itaku.ee/images/844803" target="_blank">Art - Ube Sit, Traditional (Itaku)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6290786-sona-partment-24" target="_blank">Art - SonaPartment #24 (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6195460-empty" target="_blank">Art - That Dog in Me (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6153768-sona-partment-23" target="_blank">Art - SonaPartment #23 (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/6069382-sona-partment-22" target="_blank">Art - SonaPartment #22 (Cohost)</a><br />
+		<br />
+		<a href="https://www.youtube.com/watch?v=4pMDnqRRAaM" target="_blank">Video - Overview: Globasa Tutorial (Youtube)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/auxlangs3" target="_blank">Article - Thoughts on Auxlang Marketing</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/5986577-sona-partment-21" target="_blank">Art - SonaPartment #21 (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/5892473-sona-partment-20" target="_blank">Art - SonaPartment #20 (Cohost)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/originalityoverrated" target="_blank">Article - Why Originality is Overrated</a><br />
+		<br />
+		<a href="https://www.youtube.com/watch?v=XZi-ChciSIg" target="_blank">Video - 5 Reasons Why Conlangs are NOT Useless (Youtube)</a><br />
+		<br />
+		<a href="https://itaku.ee/images/812476" target="_blank">Art - Polaris Commission (Itaku)</a><br />
+		<br />
+		<a href="https://www.youtube.com/watch?v=mXBMia_KBkc" target="_blank">Video - Overview: Mini-Linga Tutorial (Youtube)</a><br />
+		<br />
+		<a href="https://itaku.ee/images/783219" target="_blank">Art - Smolder (Itaku)</a><br />
+		<br /> 
+		<a href="https://cohost.org/Vecderg/post/4987553-i-did-the-cassette-t" target="_blank">Art - DracoFighter Casette (Cohost)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/auxlangs2" target="_blank">Article - Why There Can't be a Perfect Auxlang</a><br />
+		<br />
+		<a href="https://itaku.ee/images/766686" target="_blank">Art - Hyde Reference Sheet (Itaku)</a><br />
+		<br /> 
+		<a href="https://itaku.ee/images/753094" target="_blank">Art - Tea Party (Itaku)</a><br />
+		<br /> 
+		<a href="other.html">Game - Egg Clicker (HTML/JS)</a><br />
+		<br />
+		<a href="other.html">Game - Pond's Training (PICO-8)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/artcharacters2" target="_blank">Article - Advanced Character Design</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/4010059-it-is-that-time-of-t" target="_blank">Art - 2023 Art Summary (Cohost)</a><br />
+		<br /> 
+		<a href="https://docs.google.com/document/d/1eYUseCDbP1UuJL4Wj1SbsHl1g6_WCFKDUX_wjE-rCkU/edit" target="_blank">Resources - Toki Pona to Kaliwe Document (GDocs, linked from main website)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/mini/" target="_blank">Resources - Mini-Linga Travel Phrases + Mini Kore Cheat Sheet</a><br />
+		<br />
+		<a href="https://itaku.ee/images/697572" target="_blank">Art - Meme ft. Gulusgammamon + Gnar (Itaku)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/3841041-he-s-a-big-fan-of-th" target="_blank">Art - Fidget Rave Party (Cohost)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/artcharacters" target="_blank">Article - Basic Character Design</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/artcolors" target="_blank">Article - Basic Color Theory</a><br />
+		<br />
+		<a href="https://www.vecderg.com/kaliwe/" target="_blank">Resources - Kaliwe Reference + Ube Story + Translator</a><br />
+		<br />
+		<a href="https://www.vecderg.com/mini/" target="_blank">Resources - Mini-Linga Travel Phrases + Mini Kore Cheat Sheet</a><br />
+		<br />
+		<a href="https://www.youtube.com/watch?v=BJ51mFMaAMg" target="_blank">Video - Ido for Beginners pt.4 (Youtube)</a><br />
+		<br />
+		<a href="https://itaku.ee/images/660359" target="_blank">Art - Commission for Premasaur (Itaku)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/3338253-league-of-legends-au" target="_blank">Art - silly League sketch (Cohost)</a><br />
+		<br />
+		<a href="https://www.vecderg.com/articles/dracobalance" target="_blank">Article - Game Balance and DracoFighter</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/3239648-meet-the-artist" target="_blank">Art - Meet the Artist (Cohost)</a><br />
+		<br />
+		<a href="https://cohost.org/Vecderg/post/3143933-sona-partment-19" target="_blank">Art - SonaPartment #19 (Cohost)</a><br />
+		<br />
+		<a href="https://www.youtube.com/watch?v=K5xLTMnYEPw" target="_blank">Video - Ido for Beginners pt.3 (Youtube)</a><br />
+		<br />
+		</p>
     </description>
     <link>https://vecderg.github.io/posts/posts1.html</link>
     <pubDate>
