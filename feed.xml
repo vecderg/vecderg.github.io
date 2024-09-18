@@ -5,9 +5,41 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-    Wed, Sep 18 2024 19:12:34 +0000
+    Wed, Sep 18 2024 20:23:34 +0000
   </lastBuildDate>
   <ttl>20000</ttl>
+<!-- TEMPLATE
+  <item>
+    <title>Insert Title</title>
+	<summary>
+      Insert Summary
+    </summary>
+    <content:encoded><![CDATA[
+		<p class="normal">
+		
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/</link>
+    <pubDate>
+      Wed, Sep 18 2024 20:23:34 +0000
+    </pubDate>
+  </item>
+-->
+  <item>
+    <title>test</title>
+	<summary>
+      hi sorry i really need to check if this is working
+    </summary>
+    <content:encoded><![CDATA[
+		<p class="normal">
+		
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/</link>
+    <pubDate>
+      Wed, Sep 18 2024 20:23:34 +0000
+    </pubDate>
+  </item>
   
  <item>
     <title>On DracoFighter 2</title>
