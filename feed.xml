@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
-  <title>Vecderg Github RSS Feed</title>
+  <title>Vecderg RSS Feed</title>
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-    Thu, Sep 26 2024 08:09:43 +0000
+    Sun, Sep 29 2024 01:42:24 +0000
   </lastBuildDate>
 <!-- TEMPLATE // https://www.unixtimestamp.com/
   <item>
@@ -21,6 +21,32 @@
     </pubDate>
   </item>
 -->
+  
+  <item>
+    <title>RSS Update</title>
+    <content:encoded><![CDATA[
+		<p class="normal" style="font-size:20px">
+		September 28, 2024 - Published 
+		</p>
+
+		<p class="normal">
+		Hi everyone! My local RSS feed should finally be working: <a href="https://vecderg.github.io/feed.xml" target="_blank">https://vecderg.github.io/feed.xml</a>
+		<br />
+		<br />
+		Just in case, <a href="https://vecderg.wordpress.com/feed" target="_blank">the WordPress feed</a> will continue to get the next few posts, but I honestly might continue it indefinitely for the sole reason that it has a built-in comment system. If you run into any issues, feel free to leave a comment there or on my website's front page.
+		<br />
+		<br />
+		If you noticed the warning on the front page, I encountered a weird issue where my website had ads? I haven't been able to replicate it at all, nor anyone I know, so I'll be taking down the warning. I'm sure you all know how to browse safely with adblock, but it's still a bit unsettling since it might've been one of the JS scripts on my front page having some override, though I don't know which one it would be.
+		<br />
+		<br />
+		Stay safe, y'all.
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/posts/posts5.html</link>
+    <pubDate>
+      Sun, Sep 29 2024 01:42:24 +0000
+    </pubDate>
+  </item>
   
   <item>
     <title>Conlangs and My Language Journey</title>
