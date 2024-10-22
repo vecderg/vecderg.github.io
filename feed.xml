@@ -5,7 +5,7 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-	Sat, Oct 19 2024 03:13:37 +0000
+	Tue, Oct 22 2024 01:31:15 +0000
   </lastBuildDate>
 <!-- TEMPLATE // https://www.unixtimestamp.com/
   <item>
@@ -21,6 +21,35 @@
     </pubDate>
   </item>
 -->
+  <item>
+    <title>Articles</title>
+    <content:encoded><![CDATA[
+		<p class="normal" style="font-size:20px">
+		October 21, 2024 - Published 
+		</p>
+
+		<p class="normal">
+		Quick post for quick news!<br />
+		<br />
+		I have 2 OPINION articles to share, one here, and one on my main website. Potential hot takes may be waiting for you.<br />
+		<br />
+		The first is the one on my main website which I posted weeks ago but forgot to mention. It's titled "How Subjective is Art?" and you can read it here: <a href="https://www.vecderg.com/articles/artsubjective" target="_blank">https://www.vecderg.com/articles/artsubjective</a><br />
+		<br />
+		The other is "My Thoughts on the International Auxlang" which you can read here: <a href="../articles/article2.html">https://vecderg.github.io/articles/article2.html</a><br />
+		<br />
+		Since everyone uses it and it's most likely safe, I brought back my CBox, but it will stay quarantined in the <a href="../other.html">Other</a> tab rather than the front page to avoid potential issues.<br />
+		<br />
+		Again, thank you all for the support! I've gotten so many followers on Bluesky just in the past few days...
+		<br />
+		<br />
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/posts/posts8.html</link>
+    <pubDate>
+      Tue, Oct 22 2024 01:31:15 +0000
+    </pubDate>
+  </item>
+
   
   <item>
     <title>Peter Rabbit</title>
