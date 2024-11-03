@@ -5,7 +5,7 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-	Sun, Nov 03 2024 09:50:08 +0000
+	Sun, Nov 03 2024 22:24:56 +0000
   </lastBuildDate>
 <!-- TEMPLATE // https://www.unixtimestamp.com/
   <item>
@@ -21,6 +21,19 @@
     </pubDate>
   </item>
 -->
+  <item>
+    <title>Fixed last link</title>
+    <content:encoded><![CDATA[
+		<p class="normal">
+			Last post link was wrong and should now be corrected!! This post should also lead to the correct link.
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/posts/posts9.html</link>
+    <pubDate>
+	  Sun, Nov 03 2024 22:24:56 +0000
+    </pubDate>
+  </item>
+
   <item>
     <title>More Writing (and Art!)</title>
     <content:encoded><![CDATA[
@@ -56,7 +69,7 @@
 		<br />
 		</p>
     ]]></content:encoded>
-    <link>https://vecderg.github.io/posts9.html</link>
+    <link>https://vecderg.github.io/posts/posts9.html</link>
     <pubDate>
       Sun, Nov 03 2024 09:50:08 +0000
     </pubDate>
