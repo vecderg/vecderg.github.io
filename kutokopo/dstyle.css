@@ -1,0 +1,38 @@
+hr {
+ border-top: 1px solid LightGrey;
+}
+
+div {
+ width:70%;
+ margin:auto;
+}
+
+p, li {
+ font-family:sans-serif;
+ text-align:left;
+ line-height:1.5;
+}
+
+h1 {
+ font-weight:normal;
+ text-align:left;
+ line-height:0.3;
+}
+
+h2 {
+ font-weight:normal;
+ text-align:left;
+ line-height:0.3;
+}
+
+img {
+ display:block;
+ margin:auto;
+}
+
+a {
+ text-decoration:none;	
+}
+a:visited{
+ color: MediumPurple;
+}
