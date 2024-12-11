@@ -5,7 +5,7 @@
   <description>Updates on my posts</description>
   <link>https://vecderg.github.io/</link>
   <lastBuildDate>
-	Tue, Dec 03 2024 00:03:10 +0000
+	Wed, Dec 11 2024 02:18:11 +0000
   </lastBuildDate>
 <!-- TEMPLATE // https://www.unixtimestamp.com/
   <item>
@@ -17,10 +17,47 @@
     ]]></content:encoded>
     <link>https://vecderg.github.io/posts/posts0.html</link>
     <pubDate>
-	  Tue, Dec 03 2024 00:03:10 +0000
+	  Wed, Dec 11 2024 02:18:11 +0000
     </pubDate>
   </item>
 -->
+
+  <item>
+    <title>Dasopya 1.1 Update and Discord</title>
+    <content:encoded><![CDATA[
+		<p class="normal" style="font-size:20px">
+		December 10, 2024 - Published 
+		</p>
+
+		<p class="normal">
+		Hi, so it's time to go back on my word a bit!!<br />
+		<br />
+		My goal for the 1.0 update was to pause any major updates, but out of the blue, I had a wonderful person reach out to me -- and review the ENTIRE vocabulary one by one.<br />
+		<br />
+		There were many good changes to be had, so instead of ignoring it in favor of my nice neat number, I decided to implement all the changes we agreed on. The alternatives would have been to either 1) change nothing despite agreeing there were issues, or 2) to change it all later on when there's a lot more material and speakers -- both of which wouldn't be ideal, so 1.1 it is. <br />
+		<br />
+		It's worth mentioning that I did have some reservations about 1.0 but released it anyway since I didn't have much motivation to review everything. It was also released with the assumption that nobody was interested in doing a large amount of collaboration. I probably don't need to justify my decision to the 5 total people actually following the language, I just felt a bit self-conscious about saying "this is the final big update" and then doing another big update a week later lol<br />
+		<br />
+		Either way, here's the <a href="https://bsky.app/profile/vecderg.bsky.social/post/3lcyjembvwk2i" target="_blank">Bluesky announcement</a> that includes a link to the changes!<br />
+		<br />
+		As I say in the thread, most of the changes were word removals to keep the base vocabulary as stable as possible, but there's a possibility that some of them come back later. By removing the words we were uncertain about, the words that were left would ensure that things like translations and tutorials wouldn't have to be changed. This should be the ACTUAL point where the base vocabulary should stay nearly untouched for the foreseeable future, minus word additions, where new words will be more subject to change.<br />
+		<br />
+		And of course, big thank you to the person who took all the time to help out, Aronora! I don't know which socials they have, so here's <a href="https://www.youtube.com/@Aronora" target="_blank">their Youtube channel</a>. Their name has been added to the founding document and the vocab sheet.<br />
+		<br />
+		Also: Dasopya has <a href="https://discord.gg/ZpPSRhU3YF" target="_blank">a Discord</a> now (Bluesky announcement <a href="https://bsky.app/profile/dasopya.bsky.social/post/3lcyk2js4pc2z" target="_blank">here</a>)! I knew how important it was to make a community where people could speak together, but I didn't want to moderate another server, until one of my friends volunteered to help. All the people volunteering to help has been a huge honor...<br />
+		<br />
+		Speaking of which, last bit of news (ignoring anything non-Dasopya for this update) is that another person came to my DMs to start off <a href="https://dasopya.fandom.com/wiki/Dasopya_Wiki" target="_blank">a Dasopya wiki</a>!! It's very bare-bones, but it's worth mentioning in this update. Big thank you to Chabi!<br />
+		<br />
+		I know Dasopya is a pretty niche project, but that just means I appreciate the support all the more. Thank you for reading! There is more to come.<br />
+		<br />
+
+		</p>
+    ]]></content:encoded>
+    <link>https://vecderg.github.io/posts/posts12.html</link>
+    <pubDate>
+	  Wed, Dec 11 2024 02:18:11 +0000
+    </pubDate>
+  </item>
 
   <item>
     <title>Dasopya Release and More!</title>
