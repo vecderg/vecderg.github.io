@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+<!-- Page styling is based strongly on jprogr's Buku for Mini! https://jprogr.github.io/buku-name/ -->
+
+<!-- HEADER -->
+<html lang="en-US">
+<title>Samukopo - Dictionary</title>
+
+<head>
+<meta charset="utf-8" name="viewport" content="width=1024, initial-scale=0.1, minimum-scale=0.1"/>
+
+<style>
+body {
+	background-color:darkslategray;
+}
+
+h1, h2{
+	color:white;
+	font-family:sans-serif;
+	text-align:center;
+	line-height: 0.5;
+}
+
+h1{
+	font-size:3em;
+}
+
+p, input, label{
+	color:white;
+	font-family:sans-serif;
+}
+
+label {
+	font-size:1.5em;
+}
+
+a {
+	color:dodgerblue;
+}
+
+input {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+
+	padding: 0.8em 1em;
+	border: none;
+	border-bottom: 2px solid white;
+	background-color: transparent;
+	font-size:1.3em;
+	
+}
+
+img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#searchholder, #vocabholder, #search{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#searchholder{
+	width: 50%;
+}
+
+#vocabholder{
+	width: 40%;
+}
+
+#vocab {
+	font-size:1.5em;
+	line-height: 1.8;
+}
+
+
+
+</style>
+
+<script>
+	let cleanedData = "";
+	
+
+	function setText(data){
+		let vocab = document.getElementById("vocab");
+		let search = document.getElementById("search");
+		
+		vocab.innerHTML = stringData(cleanData(data));
+		
+		let searchbar = document.getElementById("searchbar");
+		searchbar.value = "";
+	}
+	
+	function cleanData(data){
+		data = data.trim();
+		data = data.replace(/ \/ /g,", "); // replace /'s with commas (first the ones with spaces)
+		data = data.replace(/\//g,", "); // replace /'s with commas (then the ones without)
+		data = data.replace(/[\r\n]+/g,"</br><]"); //replace newlines with actual newlines
+		data = data.replace(/\t/g,": "); //replace tabs with colons
+		data = data.split("<]");
+		for (var i = 0; i < data.length; i++) {
+			if(data[i].charAt(0) == "o"){ 
+				if(data[i].slice(0,3) == "on:"){ //exception for O
+					data[i] = data[i].charAt(0).toUpperCase() + data[i].slice(1); 
+				} 
+				else{ //fix loanword capitalization
+					data[i] =  data[i].slice(0,1) + data[i].charAt(1).toUpperCase() + data[i].slice(2);
+				}
+			} //fix letter names
+			else if(data[i].slice(0,3) == "an:" || data[i].slice(0,3) == "en:" || data[i].slice(0,3) == "in:" || data[i].slice(0,3) == "un:"){
+				data[i] = data[i].charAt(0).toUpperCase() + data[i].slice(1);
+			}
+		}
+		
+		cleanedData = data;
+		
+		return cleanedData;
+	}
+	
+	function stringData(data){
+		
+		let retData = "";
+		
+		for(var i=0; i<data.length; i++){ //convert back to string to remove commas
+			retData = retData + data[i];
+		}
+		
+		return retData;
+	}
+	
+	function search(){
+		let searchbar = document.getElementById("searchbar");
+
+		if(searchbar.value == ""){
+			setData();
+		}
+		else{
+			let retArray = [];
+		
+			for(var i=0; i<cleanedData.length; i++){ 
+				if(cleanedData[i].includes(searchbar.value)){
+					retArray.push(cleanedData[i]);
+				}
+			}
+			document.getElementById("vocab").innerHTML = stringData(retArray);
+		}
+	}
+	
+</script>
+
+
+</head>
+
+<!-- BODY -->
+<body style="margin-left:50px;margin-right:50px;" onload="setData()">
+
+<!-- TITLE -->
+<!--
+<b>
+<a style="font-size:36px;font-family:sans-serif" href="dasopya.html">KUTOKOPO</a>
+</b>
+<br>
+<hr>-->
+<!-- END OF HEADER -->
+
+<div>
+
+<br />
+<h1>samukopo</h1>
+<h2>Dasopya Dictionary</h2>
+<br />
+<hr> 
+
+<br />
+
+<img src="dasopya/img/dasopyaflag.png">	
+
+<br />
+<br />
+
+<div id="searchholder">
+
+	<!--<label >Search:</label>-->
+	<input type="text" id="searchbar" oninput="search()" placeholder="Search..."><br><br>
+
+	<!--<button id="search" onclick="search()" style="height:2.5em;width:6em">Search</button>-->
+</div>
+
+
+<div id="vocabholder">
+	<p id="vocab">
+	Placeholder Text
+	</p>
+</div>
+
+</div>
+
+<br /><br /><br /><br />
+<hr> 
+
+<script>
+	
+	function setData(){
+		let data = getData();
+		setText(data);
+	}
+		
+	function getData(){
+	//getData start
+		return	` 	
+a	(subject particle)
+an	the letter a
+bade	strong/powerful/strength/bold
+bado	valley
+badwi	defend/guard/protect/defense
+bagli	hug
+bagyo	onion/bulb
+baki	catch/capture ~ seize/grasp/grab
+bako	stick/rod
+bali	fly/soar
+baliluso	airplane
+balu	category/class/categorize
+bamu	hello/greeting/bye
+bani	meet
+bapi	to burst/pop/explode/explosion
+basi	wash
+baso	sky
+basokeso	lightning
+bato	board/plank/beam/slab
+batya	bee/wasp/hornet, superfamily: apoidea
+baw	more
+bawdani	prefer/preference
+bay	me (1st person)
+bebe	repeat/again/re-
+bedi	deceive/lie
+bedo	seed/sow
+begu	hypothetically/if/scenario
+begyo	mercury
+begyohan	wednesday
+bemyu	but / however
+bena	nose/sniff/to smell
+benu	truth/real/true
+bese	pretty/beautiful 
+bey	related / -ly (adjective suffix)
+bidi	run/sprint/jog
+bili	shake/vibrate/shudder/tremble
+bimo	office/bureau
+bisa	cell (biology)
+bisoy	weave/knit/braid/plait
+bisyu	guilt/blame/fault
+bita	lips/rim/brim
+bitye	sudden/suddenly/abrupt
+bityo	porridge/oatmeal/gruel
+boda	shoulder/shrug
+bogo	rubber
+boli	praise/worship/adore/adoration
+bomi	remember/memory
+bopo	ball/roll/spherical object
+bose	weight/weigh/heavy
+bote	blue
+boti	to want/desire/intention/will
+boy	for/at/of/in/on
+boysesey	therefore/so
+bugo	drink/to drink
+buki	compare/as/than/relatively
+buko	part/section/component
+buku	emptiness/(outer) space/room/vacuum
+bule	angry/anger
+buli	to come
+bulu	forgiveness/forgive/excuse (me)
+bumu	west
+buno	fountain/spring/well
+buse	white
+busi	toast/roast
+busu	second
+bya	male/man/boy
+bye	too/also
+byo	through/across/trans-
+byoplu	cross/intersect
+byu	most (superlative)
+dabo	banana
+dabyo	hill/mountain/bumpy/protrude
+dagla	liver
+dago	store
+dagu	promise/commitment/vow/pledge
+daki	answer/reply/respond/reaction
+dakyu	development/evolution/evolve/grow(?)
+dalo	path/road/way/hall
+dalu	degree/level/extent ~ gradually ~ so/such?
+damo	matter/material/substance
+damu	east
+dani	to like/favor
+danyo	scene/stage/set
+dapi	slap/clap/smack
+daso	planet/world/globe
+daw	person/human
+day	give/grant/award/emit
+debi	save/rescue/salvation
+debu	text
+dego	land/territory/domain/state
+degu	war
+degwa	bush/shrub
+deha	cheek/jowl
+deka	ear / hear / listen
+deki	leave/absent/away
+deko	pocket
+demi	collect/collection/gather
+deni	to tie/tie/necktie
+desa	gender
+desi	send/transmit/post/dispatch
+dey	animal/creature
+dibyu	anxious/nervous
+digyo	home/dwelling/domestic/reside/live in
+dihu	sympathy/compassion/pity
+diko	mail/letter/postal
+dilo	wall
+dimu	minus/excluding/less/fewer/dash (-)
+dimyo	gel/goop/jelly/blob
+din	place/where/location/located/at
+dine	stiff/rigid/firm/tough
+dinesyu	confirm
+dipo	pill/pellet
+dipu	circumstance/situation/context
+dise	neutral/neutrally
+disu	duration/last/continue
+disyo	venus
+disyohan	friday
+dita	teeth/bite
+dobu	motivation/stimulus
+dobyo	bubble/boil
+dogya	mold/mildew
+doka	knee/to kneel
+doke	from / off (of) / (out) of
+doku	autumn
+dole	only/solely/merely/just
+doli	write/draw
+dolikopo	notebook
+dolu	morals/morality/virtue
+domay	friend/friendly/to befriend
+dome	old/age
+dopli	replace/substitute
+dosa	horse/donkey/mule, family: equidae
+doso	machine/device
+doy	big/size/large
+duba	fox, genus: vulpes
+dubi	learn/study/research
+dubyo	universe
+duga	heart
+dugya	olive
+duko	sock/stocking
+dukye	dizzy/dizziness/vertigo
+dumo	smoke/fumes
+dun	tool
+dune	number/quantity/amount
+dunyo	trash/waste
+dupe	ready/available/prepare
+duso	soap/soapy
+dusya	lettuce
+dutyo	saturn
+dutyohan	saturday
+dwi	(adjective separation marker)
+dyu	shall/after/(future tense)
+dyulon	future
+e	(object particle)
+en	the letter e
+gaba	spouse/marry
+gabi	thought/think
+gabigoya	brain
+gado	decoration/decorate/ornament
+gadu	gratitude/thanks
+gako	can/jar/tin
+gali	search/hunt
+galo	bag/sack
+gamyo	wax/waxy
+gan	room
+gano	cream/creamy/paste
+ganya	poop
+gapi	hang/hanging/suspension/suspense
+gapyo	cake
+gata	duck/goose/swan/waterfowl, family: anatidae
+geba	berry
+gedu	government/govern/control/to rule
+gegli	intercourse/sexual
+geme	odor/a smell/to give off a smell
+gemo	park/garden
+gen	idea/concept/-ness
+gesay	cousin
+geswa	goat/ibex/caprine, subfamily: caprinae
+gesyo	ice/freeze
+gesyu	economy/economic/thrifty
+getu	behavior/behave/conduct/act
+gibe	obvious
+gibo	ring/loop/wheel
+gibu	winter
+gidyo	fold/crease/wrinkle
+gimo	cabinet/cupboard/wardrobe
+gimye	gross/disgusting
+gimyo	milk
+giso	soup
+gisu	business/institution/company
+gito	glass/transparent
+godo	tube/pipe ~ throat
+gola	wolf, species: canis lupus
+gonu	opinion
+gonyo	nest/hive/den
+gosi	call/voice/summon
+gosu	area/zone/region/size/extent
+gosye	sticky/stick/adhere
+gosyelato	glue
+goy	thing/object/it
+goya	organ
+gubya	monster/beast/beastly
+gudyo	cave
+gula	bear, family: ursidae
+gulo	base/foundation/floor
+gupi	squash/squish/mash
+guse	excessive/too much
+gusi	to play/game
+guso	hole / dig / gap
+guto	potato
+gwa	building/house/build/construct 
+gwi	good
+gwikwetaku	effective
+gyu	in front/face
+habyu	spirit/ghost/soul
+hado	steam/vapor
+hadu	wave/undulation
+hagu	story/fiction
+hako	chemical
+halo	gown/robe/dress
+hami	yawn/gape
+hamu	seeming/appear/apparently
+hamyu	million
+han	day/date
+hapa	flower
+hapu	group/together
+hapyo	foam/froth
+hasi	laugh
+haso	village
+hasyu	spring (season)
+hatwe	solution/solve/loose/untie/dissolve
+hay	to have/carry
+hebi	to fit / be fitting for / be suitable for
+hede	grey
+hedi	refer to/reference/mention/allusion
+hega	squid, class: cephalopoda ~ octopus
+heko	gem/jewel/crystal
+hese	dangerous/danger/endanger/be in danger
+heto	air/gas/atmosphere
+hey	self/own (adj) ~ intransitive converter
+hidwa	vegetable
+hidyo	supply/resource/ware/provision/provide
+hige	deep/depth/profound
+higo	gold
+hilay	lizard
+hipe	wide/width/widen/latitude
+hisa	reptile/crawl/creep
+hiso	ink
+hito	city
+hoba	belly/stomach/abdomen
+hodey	jealous/envy
+hogyu	regret/sorry
+hoku	fear/horror/scary/frightening
+homu	calm/peace
+hosu	information/inform/informative
+hoti	tolerate/resistance/withstand/bear/cope (with)
+hoy	(possessive marker) / of
+hubi	float/buoy/buoyant ~ a float
+hubo	butter/buttery
+hudaw	amphibian
+hugi	sigh
+hugwa	dog/canine, family: canidae
+huno	carrot
+hupo	cloud
+hupyo	template/mold
+i	(verb particle)
+in	the letter i
+kado	box/rectangle/cube
+kagay	grass/herb/lawn
+kahe	black
+kahi	accuse/accusation/charge
+kahu	energy/stamina
+kami	buy/purchase/shopping
+kamo	corn
+kamu	magic
+kamyo	mars
+kamyohan	tuesday
+kapi	break/damage/broken/smash
+kapo	card/placard
+kapu	shape/form/figure
+kase	spice/spicy
+kasi	hide/secret
+kaso	spoon
+kate	correct/accurate/right
+kay	question/(q marker)
+kebo	cover/shell/to cover/wrap 
+kebu	plan/agenda/program
+kedu	expectation/anticipation ~ disappointment
+kehi	hiccup
+keho	wind
+kele	rough/coarse
+keli	laying/lying/to lie down/horizontal
+kelo	cup/a glass
+kelu	north
+kepo	pepper
+keso	electricity/electrical
+kesu	health/healthy
+keti	attack/strike
+ketyo	ax/axe/hatchet/to chop
+kide	solid/firm/stable/solidify
+kidu	value/worth ~ appreciate?
+kidyo	metal
+kigo	wood
+kigu	physics
+kihu	pride/vanity/proud
+kika	horn/spike/cone/stab
+kikamaba	beak
+kikaw	tree
+kila	hair/fur
+kiladey	mammal
+kile	still / yet / even
+kilo	chain/fetters
+kima	muscle/meat/flesh
+kin	little one / (diminutive suffix) / -let / -ette / -ie
+kipa	skeleton/framework/scaffolding
+kisa	spider/arachnid, order: araneae
+kisi	compete/competition
+kiso	seat/chair/sit
+kisyo	camera
+kisyotago	photo
+kiwe	green
+kobi	to hope
+kobu	possible/maybe/perhaps/potential
+kodaw	brow/forehead
+kode	orange (color)
+kodwa	dinosaur, clade: dinosauria
+kodyu	angle/corner
+kogaw	vomit
+koka	bone
+koko	rock/stone
+kokokado	brick
+koku	cost/price/fee/rate
+komya	family ~ relative
+kona	frog/toad, order: anura
+kopi	trade/swap/switch
+kopo	book
+kosoy	scale (fish, reptiles)
+kotu	hour
+koy	far/tele-
+kubi	bless/blessing/blessed
+kudoy	pillow/cushion
+kugo	grain/cereal/wheat
+kulu	light/bright/brighten
+kumo	lock/latch/bolt/clasp
+kumye	long/length
+kupa	fruit
+kupe	enough/sufficient
+kusay	kidney
+kuso	column/pillar/pole/spine
+kuti	breathe/breath
+kutigoya	lungs
+kuto	school/educate
+kwa	fraction/ratio/rate/proportion
+kwe	(inversion prefix) / no / opposite
+kweday	take/get
+kwedesi	receive
+kwedome	young
+kwegyu	back
+kwehese	safe/safety/secure
+kwekapi	fix/mend/repair
+kwekele	smooth
+kweketi	defend
+kwekoy	close/near/almost/nearly
+kwekumodun	key
+kwemapi	confuse
+kwemosey	boring
+kwepagilihu	conclusion
+kwepaku	distraction
+kwepanu	imperfect / imperfection / flaw / flawed
+kwepide	easy
+kwepisi	stretch/tense/tension
+kwepolulon	never
+kwesadi	end
+kweseki	to lose/loss (opp. find)
+kwesepi	pull
+kwesepo	free/liberated
+kwesesey	previous
+kwesude	wet
+kwetaku	effect/affect/result
+kwetaw	same
+kwetitu	imprecise / approximately / roughly / about
+kya	what/which
+kyo	center/middle
+kyokwa	half
+kyu	you (2nd person)
+labe	round/circle/around/wheel
+lade	during/while
+lado	table/desk
+ladyu	stress/stressed out 
+lagu	rest/break
+lake	red
+lako	clothing/to wear
+lakwe	cute
+lamye	yellow
+lamyo	cheese
+lamyu	representation/represent/agent
+lano	bread/loaf/bun
+lase	fast/speed/quickly 
+laso	soy
+lasu	luck/chance/random
+lati	loan/borrow/lend/rent
+lato	liquid/fluid/to liquify
+latu	kindness/nice/kind
+law	in/inside
+lay	yes/affirmative
+layo	arrow/dart
+lebo	rain
+lebu	ray/beam
+lebyo	paint ~ painting
+leda	root
+ledi	slide/glide/slip
+legi	work/job/labor
+lemi	read/a reading/analyze
+lemo	cloth/fabric/textile
+lenu	art/artistic/to create art
+leso	label/tab/tag
+lesu	line/stripe
+leti	teach/instruct/instruction
+ley	ten
+leylosu	october
+leymanlosu	november
+leyswilosu	december
+libo	filter/sieve/colander/ to filter
+libu	letter/character/symbol/sign
+lidu	worry/concern
+lihu	logic/reason
+lina	tongue/taste/lick
+lipyo	needle/pin
+liso	water
+lito	link/connection/knot/join/joint
+lodu	or / either
+lodwi	treat (well, badly)
+lodyo	iron
+loka	neck
+lokalemo	scarf
+loki	snore/grunt
+lomu	friction/rub/massage
+lon	time/when
+lonkebu	schedule
+lontamo	schedule
+lopi	stay/continue?/keep/remainder/reserve
+losu	month/moon
+losuhan	monday
+loti	steal/theft
+lotwa	worm
+loy	eye/see/watch/look
+loyo	toilet/bathroom
+ludi	say/tell/statement/utter
+ludo	shield ~ armor
+ludwa	whale/dolphin/cetacean, infraorder: cetacea
+ludya	dragon
+lugo	spring/coil/elastic
+lugya	melon/gourd/pumpkin
+luhi	ruin/wreck/destroy
+lukoy	cork
+lukwa	snail/slug/mollusk, class: gastropoda
+luli	turn/spin/rotate
+lumo	sea/ocean
+lupe	strange/weird/rare
+lupya	raspberry
+lusi	know/knowledge/familiarity
+luso	vehicle/car/drive
+luta	rodent (non-mouse)/squirrel/beaver, order: rodentia
+maba	mouth
+mabo	food/meal/consumption/eat
+madu	feeling/emotion
+madupetyu	sensitive
+madyo	noodle
+magu	reflection/reflect
+magumaslo	mirror
+mali	annoy/irritate/bother/pester
+man	one (number/pronoun)
+manlosu	january
+mapi	understand/comprehend
+mapu	slope/incline/tilt/ramp/lean
+maslo	window/screen
+masoy	honey
+masu	morning
+maswe	holy/sacred
+masyo	swamp/fen/bog/marsh
+masyu	fashion/trend/fad
+matu	nation/country
+matutako	continent
+matwe	bitter
+matya	cat/feline, family: felidae
+maw	female/woman/girl
+may	now / well, so
+mebyu	minute
+meda	blood / bleed
+megyo	farm/cultivate/agricultural
+melaw	breast
+melo	money/fund
+mesi	show/display/demonstration/demo
+metay	intestines
+meti	to wait
+metu	night/evening
+mewi	kiss
+mey	any/ever/at all (emphatic particle)
+meydipu	anyway
+mida	lamb/sheep, species: ovis aries
+midyo	hell/hellish/to damn
+miko	nine
+mikolosu	september
+mikya	child/kid
+mila	mouse/rat, family: muridae
+milo	river/stream
+milu	love
+miludomay	partner (boyfriend, girlfriend, etc.)
+mipo	paper
+misa	cow/cattle/bison/bovine, subfamily: bovinae 
+mise	satisfied/content/satisfying/satisfy
+misi	command/order/imperative
+miso	net/mesh/web/weave
+misu	south
+mita	chest/torso
+mite	between/among/inter-
+mitu	until/up to/approach/reach
+modi	guess/conjecture
+modyo	furniture
+mohu	method/way/technique/via/by means of/using
+mole	brown
+mopye	purple/violet/lilac
+mosey	interesting/interest
+mosi	believe/belief/trust/confidence/rely
+mosu	mind/mental
+motyu	system/mechanism
+moy	multiple
+muba	fly/gnat/mosquito, order: diptera
+mubo	oven/furnace/bake/baking
+muko	cotton
+mukya	community/communal/public
+mumi	suck
+munyu	prayer/meditation
+mupyo	jupiter
+mupyohan	thursday
+musu	sleep/rest
+musulado	bed
+musye	important/importance/to matter/serious/significant
+musyu	sentence 
+muta	leg
+mutoy	drum (instrument)
+mya	parent/mom/dad
+mye	already/before/(past tense)
+myelon	past
+myu	would / (conditional marker)
+nn	(inter.) hmm, uhh 
+o	(loanword particle)
+oabokado	avocado
+oamelika	america
+oanimasyon	animation
+oantatiko	antarctic
+oantena	antenna (device)
+oaplika	africa
+oasya	asia
+oawsutelya	australia
+oba	the letter b
+obakuteleya	bacteria/germ
+obalati	india
+obalukon	balcony/veranda
+obanila	vanilla
+obaticano hito	vatican city
+obelugyen	belgium
+obideyo	video
+obilusu	virus
+obisukiti	biscuit/cookie 
+obisuteki	beefsteak/steak
+oblasilo	brazil
+obliti	britain / united kingdom / uk
+obusu	bus
+obye	the letter v
+oda	the letter d
+odanmako	denmark
+odoyti	germany
+odya	the letter j
+oenglan	england
+oga	the letter g
+ogitala	guitar
+ogolupu	golf
+oha	the letter h
+ohaka	hacker/hack
+ohanbuga	hamburger
+ohangu	korea
+ohelikote	helicopter 
+oilan	iran
+oindonesya	indonesia
+ointeneto	internet
+oitalya	italy
+okababu	kebab
+okakaw	cocoa
+okali	curry
+okanada	canada
+okanpu	camp / to camp
+okasete	cassette
+oke	the letter k
+oklasiko	classic/classical
+okonpyuta	computer
+okowala	koala
+okoyote	coyote
+okwa	the letter q
+okwako	quark
+okwilu	queer
+olaba	lava
+oladyo	radio
+olay	the letter r
+ole	the letter l
+olesutolan	restaurant
+olosya	russia
+oma	the letter m
+omamelada	marmelade/confiture/jelly/jam
+omasli	egypt
+omedya	media
+omehiko	mexico
+on	the letter o
+one	the letter n
+onedelando	netherlands
+onihon	japan
+onolege	norway
+onuselandi	new zealand
+oosuleku	austria
+opanda	panda
+opantasi	fantasy (genre)
+opasuta	pasta
+ope	the letter p
+opidyama	pajamas
+opilumu	film/movie
+opiluta	filter
+opisa	pizza
+oplanse	france
+oplasuma	plasma
+oploglamu	(computer) program
+opolusika	poland
+opotugalu	portugal
+opya	the letter f
+osa	the letter s
+osalada	salad
+osamon	salmon
+osandwitu	sandwich
+osawdi	saudi arabia
+osawsa	salsa/sauce
+oselamika	ceramic
+osingapura	singapore
+oslobaki	slovakia
+oslobenya	slovenia
+osoda	soda/pop/carbonated drink
+osopa	sofa/couch
+ososeti	sausage
+osukute	scooter
+osupageti	spaghetti
+osupamu	spam
+osupanya	spain
+osupondi	sponge
+osweli	sweden
+oswi	the letter x
+oswituse	switzerland
+osye	the letter z
+otakusi	taxi
+otanke	tank (military)
+otay	thailand
+otaywan	taiwan
+ote	the letter t
+otelebisi	television
+otelipon	phone/telephone 
+oteyata	theater
+otolamu	tram
+otopu	tofu
+otulupelu	truffle
+oturkye	turkey
+otya	the letter c
+otyay	tea
+otyokolate	chocolate
+otyonguho	china
+oukrayna	ukraine
+ousa	united states of america
+owa	the letter w
+oya	the letter y
+oyulopa	europe
+pabo	bean/legume/pea
+padoy	pie
+padwa	butterfly/moth, order: lepidoptera
+padyo	silver
+pagay	vagina
+pagi	open
+pago	hat/cap/top/summit
+pagu	assumption/assume/suppose
+paka	head/leader
+paku	caution/warn/attention/alert/notification
+palo	bowl
+pana	hand/handle
+pano	button
+panu	perfection/perfect
+paplo	ceiling/roof/top/lid
+pasa	plant / to plant
+pata	apple
+pate	excited/excitement/enthusiasm
+pay	above/up/over/on top/lift (something)/rise
+pedwi	revenge/avenge/vengeful
+pego	curve/bend/flex/arc/arch
+pegotagudun	bow (weapon)
+peke	seven
+pekelosu	july
+peli	throw/toss
+pelo	four
+pelolosu	april
+pemi	avoid/dodge/evade/shun
+pemu	crime/offense/criminal
+pene	some/somewhat
+peso	stitch/sew/seam
+petoy	plastic
+petyu	tendency/bias/inclination to
+piba	baby
+pide	difficult/problem/trouble
+piha	arm
+pihe	left
+pika	bug/insect
+piki	rip/tear
+pila	bird
+pimo	pen/stylus/pencil
+pimye	functioning/working/run/operate
+pin	this/these
+pino	bell/alarm/siren/ring
+pisi	squeeze/compress/tighten/tight
+pisoy	bottle
+piswa	sweat
+pitay	penis
+pito	fork
+pla	whole/full/fully/-ful/ to fill
+plu	to move/go
+podo	dirt/soil
+pogaw	fungus/mushroom
+pohi	burp/belch
+pokay	tail
+poke	surprising/shocking
+poki	fortify/fort/fortress
+polu	everything/all/every/any/each
+polulon	always
+pome	soft
+pomi	purée/mash/grind
+pomo	egg
+popay	grape
+potu	journey/voyage/trip/travel/adventure
+pudo	funnel
+puga	bottom/butt
+pukwi	process/procedure/to process
+pukyo	hook
+puli	blow/inflate
+pumi	request/please/ask
+punya	tomato
+puti	fart
+pya	speak/language/talk/speech/animal sound
+pyadopli	translate
+pyo	use ~ usage
+sabe	type/kind
+sabo	strip/ribbon/tape/band/stripe
+sabya	jaw/chin
+sadi	begin/start
+sadyo	rail/bar
+sadyoluso	train
+sagi	judge/assess/evaluate/judgement/critique
+sagyo	shadow/shade/to obscure
+sahi	to need
+sahu	law/rule
+saka	eagle/hawk/bird of prey, family: accipitridae
+sake	attribute/property/feature/trait
+sako	stairs/ladder
+sakun	science
+salay	strawberry
+saley	twisted/spiral/helix
+sami	walk/stroll/hike
+samu	name/word
+samye	shiny/sparkle/polish
+san	that/those
+sandipu	in that case/well/then
+sanyo	almond/amygdala
+sapa	fish
+sapye	cool/excellent/epic
+sato	sun
+satohan	sunday
+satu	investigation/examination/examine
+say	direction/toward/towards/to / guidance/orientation
+sebu	nature/natural
+sedi	try/attempt/trial/experiment
+sego	fence/barrier
+segu	music ~ song/sing
+segyo	brush/comb/scrub
+seho	star
+sehu	hundred
+seki	to find/notice/discover/detect
+seko	shirt
+sekun	season (time)
+sekyu	social ~ society
+sela	limb/appendage
+seli	six
+selilosu	june
+selu	illness/sickness/disease
+seme	straight/direct/straighten/upright
+semi	explain
+sena	species
+seni	put/place
+sepi	push/press
+sepigen	pressure
+sepo	prison/jail/captive/imprisoned
+sepyu	politics/political
+sesey	following/subsequent/to follow/next
+setu	week
+sewey	wild/untamed/wilderness ~ fierce?
+seya	mr./ms./sir/madam/gentleman
+siba	pig/boar/hog, family: suidae
+sibu	moment/instantly/immediately
+sibye	special/especially/particular/exceptional
+sidyo	island
+sige	occupied/occupation/busy/taken
+sigyo	galaxy
+siha	tears/cry
+sike	color/hue
+siko	salt/salty
+siku	thousand
+silaw	deer, family: cervidae
+sili	spread/dispersion/spray
+silo	ash/cinder
+simay	mucus/snot
+simi	indicate/signal/point to/sign (language)
+simo	rice 
+simu	meaning/definition/significance/sense
+sine	clean/to clean
+sipi	wipe
+sipo	sand/flour/dust
+sisa	pee
+site	active/activated/actively
+sitwa	spit/saliva
+sobu	focus/concentration
+sobya	spinach
+sobyu	embarrassment/humiliation/shame
+sodu	code/cipher/encode
+sogya	royal/king/queen/ruler/monarch/to reign
+sohu	dream
+soka	claw/nail/hoof
+soki	dependence/rely (on)
+soko	garlic
+soku	consciousness/awareness ~ conscience
+sole	happy, happiness
+some	funny/joke/humor
+somyu	measurement/measure/dimension/size (clothing)
+son	about/on/topic/subject/theme
+songabi	consider / think about
+sono	nut
+sonu	ethnicity/race
+sopi	happen/event/occurrence
+sote	hot/warm/heat/temperature
+sotu	order/sequence/arrange/list/series/row
+soy	zero/nothing/without/no/none
+soyhese	harmless
+subi	must/should/obligation/have to
+sude	dry
+sudi	sell/sale
+sudu	sport/athletic
+suge	thick/thickness/fat
+sugwi	win/victory/gain/earn/reap ~ prize
+sugyo	lake/loch/pond
+suka	sibling
+suke	sure/certain/certainly
+suki	swim
+sukisugyo	(swimming) pool
+suko	alcohol/liquor
+sulo	broom/sweep
+sulu	flow/current/rhythm/influence
+suma	monkey, order: primates
+sume	maturity/ripeness/adult
+sumo	sugar/sweet
+sun	similar/like/-like/-ish
+supa	crustacean/crab/shrimp/lobster/, order: decapoda
+supli	shoot/shot/gunshot/fire
+suplidun	gun
+supo	pants
+supyo	cliff
+sute	acid/sour/acidic ~ vinegar
+sutwi	mock/ridicule/deride
+swa	to be
+swe	them/he/she (3rd person)
+swi	two
+swilosu	february
+sya	and/plus/add/also/additionally
+sye	side/adjacent
+syo	life/alive/live
+syu	do/make
+syugen	action/activity
+tabi	obey/obedience/comply
+taboy	barrel/tub/vat/tank
+tabyu	party/celebrate
+tadwi	dance
+tagi	stand/standing/stance
+tago	picture/image
+tagu	battle/combat
+tagudun	weapon
+tagyu	draft/sketch/outline/design
+tahey	against/opposing/versus
+take	painful/pain/hurt/ow
+taklu	custom/tradition/habit
+tako	container/case
+taku	origin/cause/because/original/from (due to)
+takwi	scrape/shave/graze/scratch
+tali	to deserve/worthiness/merit/ -worthy
+tamaw	vine/tentacle
+tamo	map/chart/graph
+tamu	summer
+tamye	amusing/fun/amusement
+tamyegoy	toy
+tane	new
+tanegoy	news ~ newspaper
+tanehosu	news
+tanu	math(ematics)/compute
+tapi	jump
+tasey	tall/height
+tasyo	fire/burn
+taw	different/other/change
+tay	many/very/really/much/a lot
+taykobu	probably
+taylonbey	often
+tayu	temptation/tempt/tempting/lure
+tebyo	mark/stain/blemish
+tede	right
+tedo	jacket
+tega	god/divine
+tegi	suggest/propose/recommend
+tegyo	fat/grease/fry
+tehi	help/aid/assist/support
+teki	cough
+teklo	medicine/treatment/cure
+tela	skin/surface/membrane/pelt
+telatuli	texture
+teli	choose/select/decide/choice/option
+telisotu	menu
+telu	to/for (destination/goal) / in order to
+temu	purpose/goal/objective/target
+teno	snow
+tepi	stop/cancel
+tepyo	eight
+tepyolosu	august
+tesi	contraction/cramp/convulsion/spasm/twitch
+teso	who/that/which (relative clause marker)
+tewi	let/allow/permit/permission
+tey	can/able/may/-able
+teydalu	skill/aptitude/ability
+tibi	swallow/gulp
+tibo	document/file
+tido	point/dot/pixel/tip
+tiga	chicken/fowl, species: gallus domesticus
+tigo	flag/banner
+tigya	cricket/grasshopper/locust, order: orthoptera
+tigye	formal/official
+tiho	sheet/page/leaf/flat/flatten
+tiki	cut/divide/split
+tikidun	knife/dagger
+tikyo	magnet/attract
+tila	five
+tilalosu	may
+tilo	thread/string/yarn/wire
+timu	weather/climate
+timya	ant, family: formicidae
+tina	digit/finger/toe
+tino	mint ~ menthol
+tinu	quote/citation/ (quoting particle)
+tipe	equal/equality/equation
+tislo	disk/plate/disc/tray
+tisyu	accident
+titu	precise/exact/precision/specific
+toba	police
+tobi	bounce/bouncy/rebound/ricochet/spring (back)
+tobyo	wagon/cart ~ van/truck
+toga	body
+togyu	billion
+toki	to cook 
+tokigan	kitchen
+tomyo	atom
+tona	birth/create
+toni	practice/train/exercise
+tonu	year
+tose	complicated/detailed/intricate/detail
+tosi	surrender/submit/yield/give up
+toso	sound/audio/noise
+tososomyu	volume
+toy	with/include
+toyu	condition/state
+tubyo	boat/ship/naval/sail
+tugi	argue/debate/dispute
+tugya	rabbit/hare/bunny, family: leporidae
+tugyo	lemon/lime/citrus
+tuha	weasel
+tuka	foot/step/paw
+tukyu	exam/test/assessment
+tuli	touch/feeling
+tumo	door/gate
+tupi	sneeze
+tusi	perform/act/performance/show/spectacle
+tuso	shoes
+tya	three
+tyalosu	march
+u	(indirect object marker)
+un	the letter u
+wa	(inter.) ah! wow!
+yoy	(inter.) hey! yo! oi!`
+		
+		//getData end
+	}
+</script>
+ 
+</body>
+</html>
+
+
