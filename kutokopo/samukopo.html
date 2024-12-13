@@ -11,68 +11,66 @@
 
 <style>
 body {
-	background-color:darkslategray;
+	background-color:#26332F;
+}
+
+p, input, label, h1, h2{
+	color:white;
+	font-family:sans-serif;
 }
 
 h1, h2{
-	color:white;
-	font-family:sans-serif;
 	text-align:center;
 	line-height: 0.5;
 }
 
 h1{
-	font-size:3em;
-}
-
-p, input, label{
-	color:white;
-	font-family:sans-serif;
+	font-size:48px;
 }
 
 label {
-	font-size:1.5em;
+	font-size:20px;
 }
 
 a {
 	color:dodgerblue;
 }
 
-input {
+img, input, #searchholder, #search, #vocabholder{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
+}
 
-	padding: 0.8em 1em;
+input {
+	padding: 14px 16px;
 	border: none;
 	border-bottom: 2px solid white;
 	background-color: transparent;
-	font-size:1.3em;
-	
+	font-size:22px;
 }
 
-img{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#searchholder, #vocabholder, #search{
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+#checkbox1,#checkbox2,#checkbox3 {
+	background-color:#26332F;
+	display: inline;
+	height:20px;
+	width:20px;
+	margin-left:12px;
+	margin-right:2px;
+	margin-top:15px;
+	margin-bottom:10px;
 }
 
 #searchholder{
-	width: 50%;
+	width: 80%;
 }
 
 #vocabholder{
 	width: 40%;
 }
 
-#vocab {
-	font-size:1.5em;
+#vocab, p {
+	font-size:22px;
 	line-height: 1.8;
 }
 
@@ -82,7 +80,17 @@ img{
 
 <script>
 	let cleanedData = "";
+	let wholeWord = false;
+	let compoundWord = false;
+	let loanWord = false;
 	
+	function onLoad(){
+		document.getElementById("checkbox1").checked = false;
+		document.getElementById("checkbox2").checked = false;
+		document.getElementById("checkbox3").checked = false;
+		setData();
+		search();
+	}
 
 	function setText(data){
 		let vocab = document.getElementById("vocab");
@@ -92,7 +100,8 @@ img{
 		
 		let searchbar = document.getElementById("searchbar");
 		searchbar.value = "";
-	}
+		
+	} <!-- note to replace == with === sometime when i'm not afraid it'll break everything -->
 	
 	function cleanData(data){
 		data = data.trim();
@@ -102,17 +111,14 @@ img{
 		data = data.replace(/\t/g,": "); //replace tabs with colons
 		data = data.split("<]");
 		for (var i = 0; i < data.length; i++) {
-			if(data[i].charAt(0) == "o"){ 
-				if(data[i].slice(0,3) == "on:"){ //exception for O
-					data[i] = data[i].charAt(0).toUpperCase() + data[i].slice(1); 
-				} 
-				else{ //fix loanword capitalization
-					data[i] =  data[i].slice(0,1) + data[i].charAt(1).toUpperCase() + data[i].slice(2);
-				}
-			} //fix letter names
-			else if(data[i].slice(0,3) == "an:" || data[i].slice(0,3) == "en:" || data[i].slice(0,3) == "in:" || data[i].slice(0,3) == "un:"){
+			//fix letter names and exclude "nn"
+			if(data[i].slice(1,3) == "n:" && data[i].slice(0,1) != "n"){
 				data[i] = data[i].charAt(0).toUpperCase() + data[i].slice(1);
 			}
+			//fix loanword capitalization
+			else if(data[i].charAt(0) == "o"){ 
+				data[i] =  data[i].slice(0,1) + data[i].charAt(1).toUpperCase() + data[i].slice(2);
+			} 
 		}
 		
 		cleanedData = data;
@@ -121,7 +127,6 @@ img{
 	}
 	
 	function stringData(data){
-		
 		let retData = "";
 		
 		for(var i=0; i<data.length; i++){ //convert back to string to remove commas
@@ -134,19 +139,77 @@ img{
 	function search(){
 		let searchbar = document.getElementById("searchbar");
 
-		if(searchbar.value == ""){
-			setData();
-		}
-		else{
-			let retArray = [];
+		//if(searchbar.value == ""){
 		
+		let retArray = [];
+		
+		// set first basic retArray
+		if(!searchbar.value == ""){
 			for(var i=0; i<cleanedData.length; i++){ 
-				if(cleanedData[i].includes(searchbar.value)){
+				if(cleanedData[i].toLowerCase().includes(searchbar.value)){
 					retArray.push(cleanedData[i]);
 				}
 			}
-			document.getElementById("vocab").innerHTML = stringData(retArray);
 		}
+		else{ //returns everything if no search
+			for(var i=0; i<cleanedData.length; i++){ 
+				retArray.push(cleanedData[i]);
+			}
+		}
+		
+		if(wholeWord){
+		//if(false){
+			let newArray = [];
+			
+			for(var i=0;i<retArray.length;i++){
+				let line = retArray[i].replace(/,/g,"");
+				line = line.toLowerCase();
+				if(line.split(" ").includes(searchbar.value) || line.split(" ").includes(searchbar.value + ":")){
+					newArray.push(retArray[i]);
+				}
+			}
+			
+			retArray = newArray;
+			
+		}
+		
+		if(!compoundWord){
+			let newArray = [];
+			for(var i=0; i<retArray.length; i++){ 
+				if(retArray[i].slice(0,6).toLowerCase().includes(":") || retArray[i].slice(0,1) === "o"){
+					newArray.push(retArray[i]);
+				}
+			}
+			retArray = newArray;
+		}
+		
+		if(!loanWord){ //remove all loanwords
+			let newArray2 = [];
+			for(var i=0; i<retArray.length; i++){ 
+				if(retArray[i].slice(0,1) != "o"){
+					newArray2.push(retArray[i]);
+				}
+			}
+			retArray = newArray2;
+		}
+		
+		document.getElementById("vocab").innerHTML = stringData(retArray);
+		
+	}
+	
+	function checkWhole(){
+		wholeWord = !wholeWord;
+		search();
+	}
+	
+	function checkCompound(){
+		compoundWord = !compoundWord;
+		search();
+	}
+	
+	function checkLoan(){
+		loanWord = !loanWord;
+		search();
 	}
 	
 </script>
@@ -155,7 +218,7 @@ img{
 </head>
 
 <!-- BODY -->
-<body style="margin-left:50px;margin-right:50px;" onload="setData()">
+<body style="margin-left:50px;margin-right:50px;" onload="onLoad()">
 
 <!-- TITLE -->
 <!--
@@ -184,15 +247,21 @@ img{
 <div id="searchholder">
 
 	<!--<label >Search:</label>-->
-	<input type="text" id="searchbar" oninput="search()" placeholder="Search..."><br><br>
-
+	<input type="text" id="searchbar" oninput="search()" placeholder="Search...">
+	<br />
 	<!--<button id="search" onclick="search()" style="height:2.5em;width:6em">Search</button>-->
+</div>
+
+<div id="searchholder">
+	<input type="checkbox" id="checkbox1" oninput="checkWhole()"> <label>Whole Word Search</label>
+	<input type="checkbox" id="checkbox2" oninput="checkCompound()"> <label>Include Compound Words</label>
+	<input type="checkbox" id="checkbox3" oninput="checkLoan()"> <label>Include Loanwords</label>
 </div>
 
 
 <div id="vocabholder">
 	<p id="vocab">
-	Placeholder Text
+	<br /><br /><br /><br />
 	</p>
 </div>
 
@@ -1218,5 +1287,6 @@ yoy	(inter.) hey! yo! oi!`
  
 </body>
 </html>
+
 
 
