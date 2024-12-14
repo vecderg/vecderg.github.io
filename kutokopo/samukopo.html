@@ -7,7 +7,7 @@
 <title>Samukopo - Dictionary</title>
 
 <head>
-<meta charset="utf-8" name="viewport" content="width=1024, initial-scale=0.1, minimum-scale=0.1"/>
+<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
 
 <style>
 body {
@@ -62,7 +62,7 @@ input {
 }
 
 #searchholder{
-	width: 1000px;
+	width: 800px;
 }
 
 #vocabholder{
@@ -112,11 +112,11 @@ input {
 		data = data.split("<]");
 		for (var i = 0; i < data.length; i++) {
 			//fix letter names and exclude "nn"
-			if(data[i].slice(1,3) == "n:" && data[i].slice(0,1) != "n"){
+			if(data[i].slice(1,3) === "n:" && data[i].slice(0,1) != "n"){
 				data[i] = data[i].charAt(0).toUpperCase() + data[i].slice(1);
 			}
 			//fix loanword capitalization
-			else if(data[i].charAt(0) == "o"){ 
+			else if(data[i].charAt(0) === "o"){ 
 				data[i] =  data[i].slice(0,1) + data[i].charAt(1).toUpperCase() + data[i].slice(2);
 			} 
 		}
@@ -186,7 +186,8 @@ input {
 		if(!loanWord){ //remove all loanwords
 			let newArray2 = [];
 			for(var i=0; i<retArray.length; i++){ 
-				if(retArray[i].slice(0,1) != "o"){
+				// exclude O start words + the vowel names (exclude "nn")
+				if(retArray[i].slice(0,1).toLowerCase() != "o" && !(retArray[i].slice(1,3) === "n:" && retArray[i].slice(0,1) != "n")){
 					newArray2.push(retArray[i]);
 				}
 			}
@@ -253,9 +254,9 @@ input {
 </div>
 
 <div id="searchholder">
-	<input type="checkbox" id="checkbox1" oninput="checkWhole()"> <label>Whole Word Search</label>
-	<input type="checkbox" id="checkbox2" oninput="checkCompound()"> <label>Include Compound Words</label>
-	<input type="checkbox" id="checkbox3" oninput="checkLoan()"> <label>Include Loanwords</label>
+	<label><input type="checkbox" id="checkbox1" oninput="checkWhole()"> Whole Word Search</label>
+	<label><input type="checkbox" id="checkbox2" oninput="checkCompound()"> Include Compound Words</label>
+	<label><input type="checkbox" id="checkbox3" oninput="checkLoan()"> Include Loanwords</label>
 </div>
 
 
