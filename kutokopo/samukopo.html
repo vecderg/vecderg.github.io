@@ -8,7 +8,7 @@
 
 <head>
 <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1"/>
-
+<link rel="icon" type="image/png" href="https://vecderg.github.io/kutokopo/samukopo/dasopyaicondesignbyhyperr.png">
 <style>
 body {
 	background-color:#26332F;
@@ -36,7 +36,7 @@ a {
 	color:dodgerblue;
 }
 
-img, input, #searchholder, #search, #vocabholder, h1, h2, hr{
+img, input, #searchholder, #checkholder, #check, #about, #aboutdisplay, #search, #vocabholder, h1, h2, hr{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -62,7 +62,15 @@ input {
 }
 
 #searchholder{
-	width: 800px;
+	width: 400px;
+}
+
+#check{
+	display:inline-block;
+}
+
+#checkholder{
+	width: 55vw;
 }
 
 #vocabholder{
@@ -74,6 +82,14 @@ input {
 	line-height: 1.8;
 }
 
+#about, #aboutdisplay {
+	font-size: 18px;
+	width:400px;
+}
+
+#aboutdisplay {
+	width:600px;
+}
 
 
 </style>
@@ -213,6 +229,15 @@ input {
 		search();
 	}
 	
+	function about(){
+		var x = document.getElementById("aboutdisplay");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} 
+		else {
+			x.style.display = "none";
+		}
+	}
 </script>
 
 
@@ -240,10 +265,18 @@ input {
 
 <br />
 
-<img src="dasopya/img/dasopyaflag.png">	
-
+<img src="dasopya/img/dasopyaflag.png" style="width:300px;">	
+<p onclick="about()" id="about">> About</p>
+<p id="aboutdisplay" style="display:none">
+Dasopya is a constructed language created for international communication. 
+Visit <a href="https://www.dasopya.com">the official website</a> for more information! <br />
 <br />
+- Whole Word Search: Reads the search as a complete word (e.g. "a" will return "a reading" but not "reading")<br />
+- Include Compound Words: Includes compounds in search results (words containing 2 or more root words)<br />
+- Include Loanwords: Includes words that aren't part of the base vocabulary (country names, loanwords, letter names, etc.)<br />
 <br />
+Note that in Dasopya, compound words are not lexicalized (e.g. rail-vehicle just means rail-vehicle, but is listed as "train" because that's considered one of the most likely interpretations). The compound words listed here are just recommendations.
+</p>
 
 <div id="searchholder">
 
@@ -253,10 +286,10 @@ input {
 	<!--<button id="search" onclick="search()" style="height:2.5em;width:6em">Search</button>-->
 </div>
 
-<div id="searchholder">
-	<label><input type="checkbox" id="checkbox1" oninput="checkWhole()"> Whole Word Search</label>
-	<label><input type="checkbox" id="checkbox2" oninput="checkCompound()"> Include Compound Words</label>
-	<label><input type="checkbox" id="checkbox3" oninput="checkLoan()"> Include Loanwords</label>
+<div id="checkholder">
+	<div id="check"><label><input type="checkbox" id="checkbox1" oninput="checkWhole()"> Whole Word Search</label></div>
+	<div id="check"><label><input type="checkbox" id="checkbox2" oninput="checkCompound()"> Include Compound Words</label></div>
+	<div id="check"><label><input type="checkbox" id="checkbox3" oninput="checkLoan()"> Include Loanwords</label></div>
 </div>
 
 
