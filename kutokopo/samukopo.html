@@ -180,6 +180,7 @@ input {
 			
 			for(var i=0;i<retArray.length;i++){
 				let line = retArray[i].replace(/,/g,"");
+				line = line.replace(/<\/br>/g,"");
 				line = line.toLowerCase();
 				if(line.split(" ").includes(searchbar.value) || line.split(" ").includes(searchbar.value + ":")){
 					newArray.push(retArray[i]);
