@@ -7,22 +7,32 @@ div {
  margin:auto;
 }
 
-p, li {
+p, li, td, th {
  font-family:sans-serif;
  text-align:left;
  line-height:1.5;
 }
 
-h1 {
+h1, h2 {
  font-weight:normal;
  text-align:left;
  line-height:0.3;
 }
 
-h2 {
- font-weight:normal;
- text-align:left;
- line-height:0.3;
+td, th {
+ padding:5px;
+ border:1px solid #999999;
+}
+
+th {
+ background-color:#eeeeee;
+ width:50%;
+}
+
+table {
+ border-collapse: collapse;
+ width:80%;
+ margin:auto;
 }
 
 img {
@@ -35,4 +45,8 @@ a {
 }
 a:visited{
  color: MediumPurple;
+}
+
+.striped tr:nth-child(odd){
+ background-color: #e9f9f9;
 }
