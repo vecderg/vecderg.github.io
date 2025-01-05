@@ -85,11 +85,12 @@ input {
 
 #about, #aboutdisplay {
 	font-size: 18px;
-	width:400px;
+	width:300px;
 }
 
 #aboutdisplay {
-	width:600px;
+	text-align:justify;
+	width:500px;
 }
 
 
@@ -268,7 +269,7 @@ input {
 
 <br />
 
-<img src="dasopya/img/dasopyaflag.png" style="width:300px;">	
+<img src="dasopya/img/dasopyaflag.png" style="width:20%;">	
 <p onclick="about()" id="about">> About</p>
 <p id="aboutdisplay" style="display:none">
 Dasopya is a constructed language created for international communication. 
@@ -317,7 +318,6 @@ Note that in Dasopya, compound words are not lexicalized (e.g. rail-vehicle just
 	function getData(){
 	//getData start
 		return	` 	
- 	
 a	(subject particle)
 an	the letter a
 bade	strong/powerful/strength/bold
@@ -347,6 +347,7 @@ bebedoli	record/rewrite(?)
 bebegen	pattern/motif/repetition
 bedi	deceive/lie
 bedo	seed/sow
+bega	face/visage
 begu	hypothetically/if/scenario
 begyo	mercury (planet)
 begyohan	wednesday
@@ -373,6 +374,7 @@ bose	weight/weigh/heavy
 bote	blue
 boti	to want/desire/intention/will
 boy	for/at/of/in/on
+boydopli	instead
 boysesey	therefore/so
 bugo	drink/to drink
 bugosahi	thirsty
@@ -414,11 +416,10 @@ dani	to like/favor
 danyo	scene/stage/set
 dapi	slap/clap/smack
 daso	planet/world/globe
-daw	person/human
+daw	person/human/one (pronoun)
 dawgen	personality
 day	give/grant/award/emit
 debi	save/rescue/salvation
-debu	text
 dego	land/territory/domain/state
 degu	war
 degwa	bush/shrub
@@ -432,12 +433,14 @@ demi	collect/collection/gather
 deni	to tie/tie/necktie
 desa	gender
 desi	send/transmit/post/dispatch
+desyo	mass/pile/heap
 dey	animal/creature
 dibyu	anxious/nervous
 digyo	home/dwelling/domestic/reside/live in
 dihu	sympathy/compassion/pity
 diko	mail/letter/postal
 dilo	wall
+dimo	edge/boundary/border
 dimu	minus/excluding/less/fewer/dash (-)
 dimyo	gel/goop/jelly/blob
 din	place/where/location/located/at
@@ -509,7 +512,6 @@ gapyo	cake
 gata	duck/goose/swan/waterfowl, family: anatidae
 geba	berry
 gedu	government/govern/control/to rule
-gegli	intercourse/sexual
 geme	odor/a smell/to give off a smell
 gemo	park/garden
 gen	idea/concept/-ness
@@ -550,9 +552,10 @@ gusi	to play/game
 guso	hole / dig / gap
 guto	potato
 gwa	building/house/build/construct 
+gway	(suffix) adds informality
 gwi	good
 gwikwetaku	effective
-gyu	in front/face
+gyu	in front/front
 habyu	spirit/ghost/soul
 hado	steam/vapor
 hadu	wave/undulation
@@ -578,6 +581,7 @@ hedi	refer to/reference/mention/allusion
 hega	squid, class: cephalopoda ~ octopus
 heko	gem/jewel/crystal
 hese	dangerous/danger/endanger/be in danger
+hesedeki	escape/flee
 heto	air/gas/atmosphere
 hey	self/own (adj) ~ intransitive converter
 heyswa	become
@@ -625,16 +629,16 @@ kamyohan	tuesday
 kapi	break/damage/broken/smash
 kapo	card/placard
 kapu	shape/form/figure
-kase	spice/spicy
-kasi	hide/secret
 kaso	spoon
 kate	correct/accurate/right
+kati	hide/secret
 kay	question/(q marker)
 kebo	cover/shell/to cover/wrap 
 kebu	plan/agenda/program
-kedu	expectation/anticipation ~ disappointment
+kedu	expectation/anticipation
+keduhogyu	disappoint/disappointment
 kehi	hiccup
-keho	wind
+keho	wind/windy
 kele	rough/coarse
 keli	laying/lying/to lie down/horizontal
 kelo	cup/a glass
@@ -670,6 +674,7 @@ kisyo	camera
 kisyotago	photo
 kiwe	green
 kobi	to hope
+kobiboti	wish/to wish
 kobu	possible/maybe/perhaps/potential/perchance
 kodaw	brow/forehead
 kode	orange (color)
@@ -679,6 +684,7 @@ kogaw	vomit
 koka	bone
 koko	rock/stone
 kokokado	brick
+kokokebo	shell
 koku	cost/price/fee/rate
 komya	family ~ relative
 kona	frog/toad, order: anura
@@ -687,11 +693,13 @@ kopo	book
 kosoy	scale (fish, reptiles)
 kotu	hour
 koy	far/tele-
+koygen	distance
 koysan	that over there
 kubi	bless/blessing/blessed
 kudoy	pillow/cushion
 kugo	grain/cereal/wheat
 kulu	light/bright/brighten
+kume	dense/density/concentrated/thick (liquid)
 kumo	lock/locked/latch/bolt/clasp
 kumye	long/length
 kupa	fruit
@@ -731,8 +739,8 @@ kwehese	safe/safety/secure
 kwehipe	narrow/skinny
 kwehoti	submit/yield/surrender
 kwekapi	fix/mend/repair
-kwekasi	to reveal/to confess
 kwekate	incorrect/wrong/inaccurate/false
+kwekati	to reveal/to confess
 kwekele	smooth
 kwekeli	vertical
 kwekesu	unhealthy
@@ -752,6 +760,7 @@ kwelatu	mean/unkind
 kwelaw	out/outside/ex-
 kwelihu	illogical
 kwelupe	normal/common
+kwelusipla	foolish/dumb
 kwemapi	confuse
 kwemaswe	unholy
 kwemilu	hate/hatred
@@ -776,7 +785,7 @@ kwepoke	unsurprising/expected
 kwepolu	nothing/none
 kwepolulon	never
 kwepome	hard
-kwesadi	end
+kwesadi	end/final
 kwesebu	artificial/unnatural
 kwesebumilo	channel/canal/gutter
 kweseki	to lose/loss (opp. find)
@@ -812,15 +821,17 @@ kwetisyu	purposefully(?)
 kwetitu	imprecise / approximately / roughly / about
 kwetose	simple
 kwetoy	without/exclude
+kwetumu	silly
 kya	what/which
 kyo	center/middle
 kyokwa	half
 kyu	you (2nd person)
-labe	round/circle/around/wheel
+labe	round/circle/around
 lade	during/while
 lado	table/desk
 ladyu	stress/stressed out 
 lagu	rest/break/pause
+laguhan	holiday
 lake	red
 lako	clothing/to wear
 lakwe	cute
@@ -853,15 +864,15 @@ leso	label/tab/tag
 lesu	line/stripe
 leti	teach/instruct/instruction
 ley	ten
-leylosu	october
+leyloso	october
 leyman	eleven / 11
-leymanlosu	november
+leymanloso	november
 leymiko	nineteen / 19
 leypeke	seventeen / 17
 leypelo	fourteen / 14
 leyseli	sixteen / 16
 leyswi	twelve / 12
-leyswilosu	december
+leyswiloso	december
 leytepyo	eighteen / 18
 leytila	fifteen / 15
 leytya	thirteen / 13
@@ -872,6 +883,7 @@ lihu	logic/reason
 lina	tongue/taste/lick
 lipyo	needle/pin
 liso	water
+liswi	intercourse/sexual
 lito	link/connection/knot/join/joint
 lodu	or / either
 lodwi	treat (well, badly)
@@ -885,8 +897,8 @@ lon	time/when
 lonkebu	schedule
 lontamo	schedule
 lopi	stay/continue/keep/remainder/reserve
-losu	month/moon
-losuhan	monday
+loso	moon/month
+losohan	monday
 loti	steal/theft
 lotwa	worm
 loy	eye/see/watch/look
@@ -898,27 +910,30 @@ ludya	dragon
 lugo	spring/coil/elastic
 lugya	melon/gourd/pumpkin
 luhi	ruin/wreck/destroy
-lukoy	cork
+lukoy	cork (material, plug)
 lukwa	snail/slug/mollusk, class: gastropoda
 luli	turn/spin/rotate
 lumo	sea/ocean
+lun	(suffix) something beloved or held in high regard by the speaker
 lupe	strange/weird/rare
 lupya	raspberry
 lusi	know/knowledge/familiarity
 lusiboti	curious
+lusipla	intelligent/smart
 luso	vehicle/car/drive
 luta	rodent (non-mouse)/squirrel/beaver, order: rodentia
 maba	mouth
 mabo	food/meal/consumption/eat
 mabosahi	hungry
-madu	feeling/emotion
-madupetyu	sensitive (emotionally)
+madu	feeling/emotion/mood
+madupetu	sensitive (emotionally)
 madyo	noodle
 magu	reflection/reflect
 magumaslo	mirror
 mali	annoy/irritate/bother/pester
-man	one (number/pronoun)
-manlosu	january
+man	one (number)
+mandaw	one (pronoun)
+manloso	january
 mapi	understand/comprehend
 mapu	slope/incline/tilt/ramp/lean
 maslo	window/screen
@@ -938,7 +953,7 @@ mawmya	mother/mom
 mawsogya	queen
 mawsuka	sister
 mawswe	she/her
-may	now / well, so
+may	now (time)/(the) present / well, so (filler word)
 mebyu	minute
 meda	blood / bleed
 medagodo	vein
@@ -955,7 +970,7 @@ meydipu	anyway
 mida	lamb/sheep, species: ovis aries
 midyo	hell/hellish/to damn
 miko	nine
-mikolosu	september
+mikoloso	september
 mikya	child/kid
 mila	mouse/rat, family: muridae
 milo	river/stream
@@ -988,6 +1003,7 @@ moysyekapu	polygon
 muba	fly/gnat/mosquito, order: diptera
 mubo	oven/furnace/bake/baking
 mubodamo	dough
+muki	imitate/mimic/simulate/simulation
 muko	cotton
 mukya	community/communal/public
 mumi	suck
@@ -997,7 +1013,7 @@ mupyohan	thursday
 musu	sleep/rest
 musumodyo	bed
 musye	important/importance/to matter/serious/significant
-musyu	sentence 
+musyu	sentence (linguistics)
 muta	leg
 mutoy	drum (instrument)
 mya	parent/mom/dad
@@ -1036,6 +1052,7 @@ odya	the letter j
 oenglan	england
 oga	the letter g
 ogitala	guitar
+oglapito	graphite
 ogolupu	golf
 oha	the letter h
 ohaka	hacker/hack
@@ -1053,10 +1070,13 @@ okanada	canada
 okanpu	camp / to camp
 okasete	cassette
 oke	the letter k
+okilometelu	kilometer
 oklasiko	classic/classical
 okonpyuta	computer
+okopi	copy/to copy/duplicate
 okowala	koala
 okoyote	coyote
+okupon	coupon
 okwa	the letter q
 okwako	quark
 okwilu	queer
@@ -1071,6 +1091,8 @@ omamelada	marmelade/confiture/jelly/jam
 omasli	egypt
 omedya	media
 omehiko	mexico
+ometelu	meter
+omila	mile
 on	the letter o
 one	the letter n
 onedelando	netherlands
@@ -1135,6 +1157,7 @@ ousa	united states of america
 owa	the letter w
 oya	the letter y
 oyoguto	yogurt
+oyoguto	yogurt
 oyulopa	europe
 pabo	bean/legume/pea
 padoy	pie
@@ -1163,16 +1186,16 @@ pedwi	revenge/avenge/vengeful
 pego	curve/bend/flex/arc/arch
 pegotagudun	bow (weapon)
 peke	seven
-pekelosu	july
+pekeloso	july
 peli	throw/toss
 pelo	four
-pelolosu	april
+peloloso	april
 pemi	avoid/dodge/evade/shun
 pemu	crime/offense/criminal
-pene	some/somewhat
+pene	some/somewhat/rather/pretty
 peso	stitch/sew/seam
 petoy	plastic
-petyu	tendency/bias/inclination to
+petu	tendency/bias/inclination to
 piba	baby
 pide	difficult/problem/trouble
 piha	arm
@@ -1203,12 +1226,15 @@ pokay	tail
 poke	surprising/shocking
 poki	fortify/fort/fortress
 polu	everything/all/every/any/each
+poludaw	everyone/everybody
 polulon	always
 pome	soft
 pomi	purée/mash/grind
 pomo	egg
 popay	grape
+poso	spice
 potu	journey/voyage/trip/travel/adventure
+pudi	fart
 pudo	funnel
 puga	bottom/butt
 pukwi	process/procedure/to process
@@ -1216,7 +1242,6 @@ pukyo	hook
 puli	blow/inflate
 pumi	request/please/ask
 punya	tomato
-puti	fart
 pya	speak/language/talk/speech/animal sound
 pyabyo	translate
 pyadopli	translate
@@ -1231,7 +1256,7 @@ sadyo	rail/bar
 sadyoluso	train
 sagi	judge/assess/evaluate/judgement/critique
 sagyo	shadow/shade/to obscure
-sahi	to need
+sahi	to need/necessary/necessity
 sahu	law/rule
 saka	eagle/hawk/bird of prey, family: accipitridae
 sake	attribute/property/feature/trait
@@ -1253,6 +1278,7 @@ sato	sun
 satohan	sunday
 satu	investigation/examination/examine
 say	direction/toward/towards/to / guidance/orientation
+seba	snake/serpent/slither
 sebu	nature/natural
 sedi	try/attempt/trial/experiment
 sedibade	effort
@@ -1267,7 +1293,7 @@ sekun	season (time)
 sekyu	social ~ society
 sela	limb/appendage
 seli	six
-selilosu	june
+seliloso	june
 selu	illness/sickness/disease
 seludin	hospital
 seme	straight/direct/straighten/upright
@@ -1362,7 +1388,7 @@ swi	two
 swikwatya	two thirds / 2\\3
 swiley	twenty / 20
 swileyman	twenty one / 21
-swilosu	february
+swiloso	february
 sya	and/plus/add/also/additionally
 sye	side/adjacent
 syo	life/alive/live
@@ -1373,7 +1399,7 @@ tabi	obey/obedience/comply
 taboy	barrel/tub/vat/tank
 tabyu	party/celebrate
 tadwi	dance
-tagi	stand/standing/stance
+tagi	stand/standing/stance/vertical
 tago	picture/image
 tagodoli	to draw
 tagu	battle/combat
@@ -1383,8 +1409,9 @@ tahey	against/opposing/versus
 take	painful/pain/hurt/ow
 taklu	custom/tradition/habit
 tako	container/case
-taku	origin/cause/because/original/from (due to)
+taku	origin/cause/because/to cause/original/from (due to)
 takwi	scrape/shave/graze/scratch
+takwipetu	itch/itchy
 tali	to deserve/worthiness/merit/ -worthy
 tamaw	vine/tentacle
 tamo	map/chart/graph
@@ -1413,6 +1440,7 @@ tegyo	fat/grease/fry
 tehi	help/aid/assist/support
 teki	cough
 teklo	medicine/treatment/cure
+teku	respect/admiration/honor
 tela	skin/surface/membrane/pelt
 telatuli	texture
 teli	choose/select/decide/choice/option
@@ -1422,7 +1450,7 @@ temu	purpose/goal/objective/target
 teno	snow
 tepi	stop/cancel
 tepyo	eight
-tepyolosu	august
+tepyoloso	august
 tesi	contraction/cramp/convulsion/spasm/twitch
 teso	who/that/which (relative clause marker)
 tewi	let/allow/permit/permission
@@ -1440,7 +1468,7 @@ tiki	cut/divide/split
 tikidun	knife/dagger
 tikyo	magnet/attract
 tila	five
-tilalosu	may (month)
+tilaloso	may (month)
 tilo	thread/string/yarn/wire
 timu	weather/climate
 timya	ant, family: formicidae
@@ -1450,7 +1478,7 @@ tinu	quote/citation/ (quoting particle)
 tipe	equal/equality/equation
 tipebose	balance
 tislo	disk/plate/disc/tray
-tisyu	accident/accidentally
+tisyu	accident/accidentally/mistake
 titu	precise/exact/precision/specific
 toba	police
 tobi	bounce/bouncy/rebound/ricochet/spring (back)
@@ -1466,7 +1494,7 @@ toni	practice/train/exercise
 tonu	year
 tose	complicated/detailed/intricate/detail
 tosi	surrender/submit/yield/give up
-toso	sound/audio/noise
+toso	sound/audio/noise/loud/noisy/noisiness
 tososomyu	volume
 toy	with/include
 toyu	condition/state
@@ -1477,14 +1505,16 @@ tugyo	lemon/lime/citrus
 tuha	weasel
 tuka	foot/step/paw
 tukyu	exam/test/assessment
+tule	loyal/faithful/devoted/devotion/allegiance/fidelity
 tuli	touch/feeling
-tulipetyu	sensitive (physical)
+tulipetu	sensitive (physical)
 tumo	door/gate
+tumu	serious/earnest
 tupi	sneeze
 tusi	perform/act/performance/show/spectacle
 tuso	shoes
 tya	three
-tyalosu	march (month)
+tyaloso	march (month)
 u	(indirect object marker)
 un	the letter u
 wa	(inter.) ah! wow!
