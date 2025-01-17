@@ -8,10 +8,69 @@
 
 <head>
 <meta charset="utf-8" name="viewport" content="width=1024, initial-scale=0.1, minimum-scale=0.1"/>
+
+<script type="text/javascript">
+
+	function onLoad2(){
+		setLanguage();
+		
+	}
+	
+	function setLanguage(){
+		let lang = navigator.language;
+		let language = document.getElementById("language");
+		language.innerHTML = lang;
+		language.style.display = "none";
+		// may implement this one day, but it hard
+		var hash = window.location.hash.substr(1);
+		switch(hash){
+			case "esperanto":
+				showEsperanto();
+				break;
+			case "espanol":
+				showSpanish();
+				break;
+			default:
+				showEnglish();
+		}
+		
+	}
+	
+	function hideAll(){
+		let english = document.getElementById("english");
+		let esperanto = document.getElementById("esperanto");
+		let spanish = document.getElementById("spanish");
+		english.style.display = "none";
+		esperanto.style.display = "none";
+		spanish.style.display = "none";
+	}
+	
+	function showEnglish(){
+		hideAll();
+		english.style.display = "block";
+		window.location.hash = "english";
+	}
+	
+	function showEsperanto(){
+		hideAll();
+		esperanto.style.display = "block";
+		window.location.hash = "esperanto";
+	}
+	
+	function showSpanish(){
+		hideAll();
+		spanish.style.display = "block";
+		window.location.hash = "espanol";
+	}
+	
+</script>
+
 </head>
 
+
+
 <!-- BODY -->
-<body style="margin-left:50px;margin-right:50px;">
+<body style="margin-left:50px;margin-right:50px;" onload="onLoad()">
 
 <!-- TITLE -->
 <b>
@@ -21,7 +80,17 @@
 <hr>
 <!-- END OF HEADER -->
 
-<div>
+<div style="width:100%;"> <!--to make it proper width for some reason-->
+</div>
+
+<button onclick="showEnglish()">English</button>
+<button onclick="showSpanish()">Español</button>
+<button onclick="showEsperanto()">Esperanto</button>
+
+<p id="language">
+</p>
+
+<div id="english">
 
 <br />
 <h1>Introduction in English</h1>
@@ -33,6 +102,1611 @@
  <table>
   <tr>
     <th>English</th>
+    <th>Dasopya</th>
+  </tr>
+  <tr>
+    <td>Dasopya is a language that was made to be simple and easy for anyone around the world to learn.</td>
+    <td>dasopya i swa e pya teso i syubey telu i swa e kwetose e kwepide telu poludaw hoy labe daso i dubi.</td>
+  </tr>
+  <tr>
+    <td>Its grammar has few rules, and no exceptions.</td>
+    <td>goy pyasahu i hay e kwetay sahu, sya e soy sibyegoy.</td>
+  </tr>
+  <tr>
+    <td>Spelling is consistent, and every letter always makes the same sound.</td>
+    <td>libudoli i swa e soytawbey, sya a polu libu i polulon tona e kwetaw toso.</td>
+  </tr>
+  <tr>
+    <td>It only has about 800 root words, which can be compounded freely and easily.</td>
+    <td>goy i dole hay e kwetitu 800 gulo samu, teso i tey samuhapu hoy kwesepobey sya kwepidebey.</td>
+  </tr>
+  <tr>
+    <td>Every word is made from scratch, so that there is no bias towards any country.</td>
+    <td>polu samu i syubey hoy soyhupyo; boysesey, i swa e soy petu hoy mey matu.</td>
+  </tr>
+</table> 
+
+<br />
+<h2>Basics</h2>
+<hr> 
+
+<h3>
+Alphabet and Pronunciation
+</h3>
+
+<p>
+Every letter is always pronounced the same. Some letters have multiple pronunciations depending on speaker preference, but the first one listed is preferred. Capitalization in Dasopya is not required.<br />
+</p>
+
+<table style="width:50%; margin-left:0px;">
+  <tr>
+    <th style="width:10%">Letter</th>
+    <th style="width:20%">IPA</th>
+	<th>Example</th>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>/a/</td>
+	<td>like "a" in "father"</td>
+  </tr>
+  <tr>
+    <td>B</td>
+    <td>/b/, /v/</td>
+	<td>like "b" in "boy"</td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>/d/, /ð̞/</td>
+	<td>like "d" in "dip"</td>
+  </tr>
+  <tr>
+	<td>E</td>
+	<td>/e/</td>
+	<td>like "e" in "let"</td>
+  </tr>
+  <tr>
+	<td>G</td>
+	<td>/g/</td>
+	<td>like "g" in "good"</td>
+  </tr>
+  <tr>
+	<td>H</td>
+	<td>/h/, /x/, /ɾ/</td>
+	<td>like "h" in "hole"</td>
+  </tr>
+  <tr>
+	<td>I</td>
+	<td>/i/</td>
+	<td>like "i" in "ski"</td>
+  </tr>
+  <tr>
+	<td>K</td>
+	<td>/kʰ/, /k/</td>
+	<td>like "k" in "kite"</td>
+  </tr>
+  <tr>
+	<td>L</td>
+	<td>/l/, /ɾ/</td>
+	<td>like "l" in "log"</td>
+  </tr>
+  <tr>
+	<td>M</td>
+	<td>/m/</td>
+	<td>like "m" in "map"</td>
+  </tr>
+  <tr>
+	<td>N</td>
+	<td>/n/</td>
+	<td>like "n" in "nine"</td>
+  </tr>
+  <tr>
+	<td>O</td>
+	<td>/o/</td>
+	<td>like "o" in "more"</td>
+  </tr>
+  <tr>
+	<td>P</td>
+	<td>/pʰ/, /p/, /f/</td>
+	<td>like "p" in "peace"</td>
+  </tr>
+  <tr>
+	<td>S</td>
+	<td>/s/, /θ/, /ʃ/, /z/</td>
+	<td>like "s" in "sit"</td>
+  </tr>
+  <tr>
+	<td>T</td>
+	<td>/tʰ/, /t/</td>
+	<td>like "t" in "time"</td>
+  </tr>
+  <tr>
+	<td>U</td>
+	<td>/u/</td>
+	<td>like "u" in "flu"</td>
+  </tr>
+  <tr>
+	<td>W</td>
+	<td>/w/, /u/, /v/</td>
+	<td>like "w" in "win" or "u" in "flu"</td>
+  </tr>
+  <tr>
+	<td>Y</td>
+	<td>/j/, /i/</td>
+	<td>like "y" in "yes" or "i" in "ski"</td>
+  </tr>
+</table> 
+
+
+<p>
+Every word (including compound words) is always stressed on the last syllable.<br />
+</p>
+
+<ul>
+<li><b>bamu</b> (hello) - baMU (/ba'mu/)</li>
+<li><b>dasopya</b> (world-speak) - dasoPYA (/daso'pja/)</li>
+</ul>
+
+<br />
+<h3>
+Words
+</h3>
+
+<p>
+Words can be used as any part of speech.<br />
+</p>
+
+<ul>
+<li><b>syo</b> - life, alive, to live</li>
+</ul>
+
+<p>
+If context doesn't make it clear, suffixes can be added.<br />
+</p>
+
+<ul>
+<li><b>syogen</b> - life (life-concept)</li>
+<li><b>syobey</b> - alive (life-related)</li>
+<li><b>syosyu</b> - to live (life-do)</li>
+</ul>
+
+<p>
+There are no articles, and words can be singular or plural by default.<br />
+</p>
+
+<ul>
+<li><b>koko</b> - rock, rocks, the rock, a rock</li>
+<li><b>moy koko</b> - multiple rocks</li>
+<li><b>man koko</b> - one rock</li>
+</ul>
+
+<p>
+Compound words are formed freely by using describing words first, and the base word at the end.<br />
+</p>
+
+<ul>
+<li><b>panatina</b> (hand-digit) - finger</li>
+<li><b>kwepagi</b> (opposite-open) - close</li>
+<li><b>musumodyokebo</b> (sleep-furniture-cover) - bedsheet</li>
+</ul>
+
+<br />
+<h3>
+Sentences
+</h3>
+
+<p>
+In sentences, "<b>a</b>" precedes subjects, "<b>i</b>" precedes verbs, and "<b>e</b>" precedes objects. Context always comes at the beginning. <br />
+</p>
+
+<ul>
+<li><b>pindin, a dey i mabo e kabay</b> ("this-place, [a] animal [i] food [e] grass") - Here, the animal eats grass</li>
+</ul>
+
+<p>
+Adjectives come before nouns, and adverbs come before verbs. Otherwise, they are identical. <br />
+</p>
+
+<ul>
+<li><b>lase sapa i lase suki</b> ("fast fish [i] fast swim") - Fast fish swim quickly </li>
+</ul>
+
+<p>
+Prepositions come before nouns. <br />
+</p>
+
+<ul>
+<li><b>daw i sami law gemo</b> ("person [i] walk in garden") - The person walks in the garden </li>
+</ul>
+
+<br />
+<h3>
+Grammar
+</h3>
+
+<p>
+<b>mye</b> forms past tense, <b>dyu</b> forms future tense.<br />
+</p>
+
+<ul>
+<li><b>kyu i mye legi; bay i dyu legi</b> ("you [i] already work; I [i] shall work") - You worked; I will work.</li>
+</ul>
+
+<p>
+Auxiliary verbs follow each other directly.<br />
+</p>
+
+<ul>
+<li><b>swe i subi sedi plu</b> ("they [i] should try go") - They should try to go </li>
+</ul>
+
+<p>
+<b>hoy</b> marks possession, but can also rearrange adjectives.<br />
+</p>
+
+<ul>
+<li><b>kopo hoy bay</b> ("book of me") - my book </li>
+<li><b>kopo hoy lake</b> ("book of red") - red book </li>
+</ul>
+
+<p>
+To form a question, begin the sentence with <b>kay</b> and attach <b>kya</b> to the unknown.<br />
+</p>
+
+<ul>
+<li><b>kay a lon i swa e kya?</b> ("question [a] time [i] is [e] what") - What time is it?</li>
+</ul>
+
+<p>
+<b>teso</b> can create a dependent clause, like "that" or "who."<br />
+</p>
+
+<ul>
+<li><b>swe i dani e gwa teso i swa e gwi</b> ("they [i] like [e] house that [i] is [e] good") - They like houses that are good</li>
+</ul>
+
+<p>
+Dasopya is pro-drop, allowing any word that is obvious from context to be omitted (or dropped).<br />
+</p>
+
+<ul>
+<li><b>hapa e bote</b> ("flower [e] blue") - The flower (is) blue</li>
+<li><b>i mapi</b> ("[i] understand") - (I) understand</li>
+<li><b>e masu</b> ("[e] morning") - (It is) morning</li>
+</ul>
+
+<p>
+"<b>u</b>" marks indirect objects.<br />
+</p>
+
+<ul>
+<li><b>i day e san u swe</b> ("[i] give [e] that [u] them") - Give that to them</li>
+</ul>
+
+<p>
+"<b>o</b>" marks any word outside the base vocabulary.<br />
+</p>
+
+<ul>
+<li><b>oKanada</b> - Canada</li>
+<li><b>oPisa</b> - Pizza</li>
+</ul>
+
+<br />
+<h3>
+Basic Words
+</h3>
+
+<table class="striped" style="width:50%; margin-left:0px;">
+  <tr>
+    <th style="width:30%">Dasopya</th>
+    <th style="width:80%">English</th>
+  </tr>
+  <tr>
+    <td>pin</td>
+    <td>this</td>
+  </tr>
+  <tr>
+    <td>san</td>
+    <td>that</td>
+  </tr>
+  <tr>
+    <td>bay</td>
+    <td>I, me</td>
+  </tr>
+  <tr>
+    <td>kyu</td>
+    <td>you (singular, plural)</td>
+  </tr>
+  <tr>
+    <td>swe</td>
+    <td>they (singular, plural)</td>
+  </tr>
+  <tr>
+    <td>daw</td>
+    <td>person, human, one (pronoun)</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>lay</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>kwe</td>
+    <td>(inversion prefix), no, opposite</td>
+  </tr>
+  <tr>
+    <td>kate</td>
+    <td>correct, accurate, right</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>bamu</td>
+    <td>hello, greeting, goodbye</td>
+  </tr>
+  <tr>
+    <td>gwi</td>
+    <td>good</td>
+  </tr>
+  <tr>
+    <td>kwegwi</td>
+    <td>bad</td>
+  </tr>
+  <tr>
+    <td>gadu</td>
+    <td>thanks, gratitude</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>swa</td>
+    <td>is, am, to be</td>
+  </tr>
+  <tr>
+    <td>syu</td>
+    <td>to do, make</td>
+  </tr>
+  <tr>
+    <td>day</td>
+    <td>to give, grant, award, emit</td>
+  </tr>
+  <tr>
+    <td>pya</td>
+    <td>to speak, to talk, speech, language, animal sound</td>
+  </tr>
+  <tr>
+    <td>plu</td>
+    <td>to move, to go</td>
+  </tr>
+ <tr>
+    <td>boti</td>
+    <td>to want, desire, intention, will</td>
+  </tr>
+  <tr>
+    <td>tey</td>
+    <td>can, be able to, may, -able</td>
+  </tr>
+  <tr>
+    <td>subi</td>
+    <td>must, should, obligation, have to</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>polu</td>
+    <td>everything, all, every, any, each</td>
+  </tr>
+  <tr>
+    <td>tay</td>
+    <td>many, very, really, much, a lot</td>
+  </tr>
+  <tr>
+    <td>pene</td>
+    <td>some, somewhat, rather, pretty</td>
+  </tr>
+  <tr>
+    <td>moy</td>
+    <td>multiple</td>
+  </tr>
+  <tr>
+    <td>baw</td>
+    <td>more</td>
+  </tr>
+  <tr>
+    <td>buki</td>
+    <td>compare, as, than, relatively</td>
+  </tr>
+  <tr>
+    <td>byu</td>
+    <td>most (superlative)</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>sya</td>
+    <td>and, plus, add, also, additionally</td>
+  </tr>
+  <tr>
+    <td>lodu</td>
+    <td>or, either</td>
+  </tr>
+  <tr>
+    <td>bemyu</td>
+    <td>but, however</td>
+  </tr>
+  <tr>
+    <td>begu</td>
+    <td>if, hypothetically, scenario</td>
+  </tr>
+  <tr>
+    <td>taku</td>
+    <td>cause, because, origin, from (due to)</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>kay</td>
+    <td>question, (question marker)</td>
+  </tr>
+  <tr>
+    <td>kya</td>
+    <td>what, which</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>mye</td>
+    <td>already, before, (past tense marker)</td>
+  </tr>
+  <tr>
+    <td>dyu</td>
+    <td>shall, after, (future tense marker)</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>boy</td>
+    <td>for, at, of, in, on, (preposition marker)</td>
+  </tr>
+  <tr>
+    <td>telu</td>
+    <td>to, for (destination, goal), in order to</td>
+  </tr>
+  <tr>
+    <td>doke</td>
+    <td>from, off (of), (out) of</td>
+  </tr>
+  <tr>
+    <td>say</td>
+    <td>direction, towards, to, guidance, orientation</td>
+  </tr>
+  <tr>
+    <td>pay</td>
+    <td>above, up, over, on top, lift (something), rise</td>
+  </tr>
+  <tr>
+    <td>gyu</td>
+    <td>front, in front</td>
+  </tr>
+  <tr>
+    <td>law</td>
+    <td>in, inside</td>
+  </tr>
+  <tr>
+    <td>sye</td>
+    <td>side, adjacent</td>
+  </tr>
+  <tr>
+    <td>byo</td>
+    <td>through, across, trans-</td>
+  </tr>
+  <tr>
+    <td>koy</td>
+    <td>far, tele-</td>
+  </tr>
+  <tr>
+    <td>mite</td>
+    <td>between, among, inter-</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>soy</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td>man</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td>swi</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td>tya</td>
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>pelo</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>tila</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>seli</td>
+    <td>6</td>
+  </tr>
+  <tr>
+    <td>peke</td>
+    <td>7</td>
+  </tr>
+  <tr>
+    <td>tepyo</td>
+    <td>8</td>
+  </tr>
+  <tr>
+    <td>miko</td>
+    <td>9</td>
+  </tr>
+  <tr>
+    <td>ley</td>
+    <td>10</td>
+  </tr>
+  <tr>
+    <td>sehu</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>siku</td>
+    <td>1000</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>bya</td>
+    <td>male, man, boy</td>
+  </tr>
+  <tr>
+    <td>maw</td>
+    <td>female, woman, girl</td>
+  </tr>
+  <tr>
+    <td>domay</td>
+    <td>friend</td>
+  </tr>
+  <tr>
+    <td>milu</td>
+    <td>love</td>
+  </tr>
+  <tr>
+    <td>pana</td>
+    <td>hand, handle, to hold</td>
+  </tr>
+  <tr>
+    <td>loy</td>
+    <td>eye, to see, watch, look</td>
+  </tr>
+  <tr>
+    <td>deka</td>
+    <td>ear, hear, listen</td>
+  </tr>
+  <tr>
+    <td>paka</td>
+    <td>head, leader</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>dey</td>
+    <td>animal, creature</td>
+  </tr>
+  <tr>
+    <td>matya</td>
+    <td>cat, feline</td>
+  </tr>
+  <tr>
+    <td>hugwa</td>
+    <td>dog, canine</td>
+  </tr>
+  <tr>
+    <td>pila</td>
+    <td>bird</td>
+  </tr>
+  <tr>
+    <td>sapa</td>
+    <td>fish</td>
+  </tr>
+  <tr>
+    <td>pasa</td>
+    <td>plant, to plant</td>
+  </tr>
+  <tr>
+    <td>kikaw</td>
+    <td>tree</td>
+  </tr>
+  <tr>
+    <td>hapa</td>
+    <td>flower</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>gwa</td>
+    <td>building, house, to build, to construct</td>
+  </tr>
+  <tr>
+    <td>gan</td>
+    <td>room</td>
+  </tr>
+  <tr>
+    <td>kiso</td>
+    <td>chair, sit</td>
+  </tr>
+  <tr>
+    <td>lado</td>
+    <td>table, desk</td>
+  </tr>
+  <tr>
+    <td>pyo</td>
+    <td>to use</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>doy</td>
+    <td>big</td>
+  </tr>
+  <tr>
+    <td>kumye</td>
+    <td>long, length</td>
+  </tr>
+  <tr>
+    <td>sike</td>
+    <td>color, hue</td>
+  </tr>
+  <tr>
+    <td>lake</td>
+    <td>red</td>
+  </tr>
+  <tr>
+    <td>lamye</td>
+    <td>yellow</td>
+  </tr>
+  <tr>
+    <td>bote</td>
+    <td>blue</td>
+  </tr>
+  <tr>
+    <td>kahe</td>
+    <td>black</td>
+  </tr>
+  <tr>
+    <td>buse</td>
+    <td>white</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>lon</td>
+    <td>time, when</td>
+  </tr>
+  <tr>
+    <td>tonu</td>
+    <td>year</td>
+  </tr>
+  <tr>
+    <td>loso</td>
+    <td>moon, month</td>
+  </tr>
+  <tr>
+    <td>han</td>
+    <td>day, date</td>
+  </tr>
+  <tr>
+    <td>kotu</td>
+    <td>hour</td>
+  </tr>
+  <tr>
+    <td>mebyu</td>
+    <td>minute</td>
+  </tr>
+  <tr>
+    <td>busu</td>
+    <td>second</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>mabo</td>
+    <td>food, meal, to eat, to consume</td>
+  </tr>
+  <tr>
+    <td>bugo</td>
+    <td>drink, to drink</td>
+  </tr>
+  <tr>
+    <td>kupa</td>
+    <td>fruit</td>
+  </tr>
+  <tr>
+    <td>hidwa</td>
+    <td>vegetable</td>
+  </tr>
+  <tr>
+    <td>lano</td>
+    <td>bread, loaf, bun</td>
+  </tr>
+  <tr>
+    <td>simo</td>
+    <td>rice</td>
+  </tr>
+  <tr>
+    <td>toki</td>
+    <td>to cook</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td></td>
+  </tr>
+</table> 
+
+<br /><br />
+<p style="color:grey;">
+Translated by Vecderg. Page style based on elefen.org
+</p>
+
+</div> <!-- end English section -->
+
+
+<div id="esperanto">
+
+<br />
+<h1>Enkonduko en Esperanto</h1>
+<hr>
+<a href="dasopya.html">&lt; Reiru al Enhavo</a> <br />
+
+<br />
+
+ <table>
+ <tr>
+ <th>Esperanto</th>
+ <th>Dasopya</th>
+ </tr>
+ <tr>
+ <td>Dasopya estas lingvo kiu estis farita por esti simpla kaj facile lernebla por ĉiuj ĉirkaŭ la mondo.</td>
+ <td>dasopya i swa e pya teso i syubey telu i swa e kwetose e kwepide telu poludaw hoy labe daso i dubi.</td>
+ </tr>
+ <tr>
+ <td>Ĝia gramatiko havas malmultajn regulojn, kaj neniujn esceptojn.</td>
+ <td>goy pyasahu i hay e kwetay sahu, sya e soy sibyegoy.</td>
+ </tr>
+ <tr>
+ <td>Literumo estas konsekvenca, kaj ĉiu litero ĉiam faras la saman sonon.</td>
+ <td>libudoli i swa e soytawbey, sya a polu libu i polulon tona e kwetaw toso.</td>
+ </tr>
+ <tr>
+ <td>Ĝi havas nur 800 radikvortojn, kiuj povas esti kunmetitaj libere kaj facile.</td>
+ <td>goy i dole hay e kwetitu 800 gulo samu, teso i tey samuhapu hoy kwesepobey sya kwepidebey.</td>
+ </tr>
+ <tr>
+ <td>Ĉiu vorto estas farita de nulo, tiel ke ne ekzistas antaŭjuĝo al iu ajn lando.</td>
+ <td>polu samu i syubey hoy soyhupyo; boysesey, i swa e soy petu hoy mey matu.</td>
+ </tr>
+</table>
+
+<br />
+<h2>Bazaj</h2>
+<hr>
+
+<h3>
+Alfabeto kaj Prononco
+</h3>
+
+<p>
+Ĉiu litero estas ĉiam prononcata same. Iuj literoj havas multoblajn prononcojn depende de la prefero de parolanto, sed la unua listigita estas preferita. Majuskligo en Dasopya ne estas bezonata.<br />
+</p>
+
+<table style="width:50%; margin-left:0px;">
+ <tr>
+ <th style="width:10%">Letero</th>
+ <th style="width:20%">IPA</th>
+  <th>Prononco</th>
+ </tr>
+ <tr>
+ <td>A</td>
+ <td>/a/</td>
+  <td>A</td>
+ </tr>
+ <tr>
+ <td>B</td>
+ <td>/b/, /v/</td>
+  <td>B</td>
+ </tr>
+ <tr>
+ <td>D</td>
+ <td>/d/, /ð̞/</td>
+  <td>D</td>
+ </tr>
+ <tr>
+  <td>E</td>
+  <td>/e/</td>
+  <td>E</td>
+ </tr>
+ <tr>
+  <td>G</td>
+  <td>/g/</td>
+  <td>G</td>
+ </tr>
+ <tr>
+  <td>H</td>
+  <td>/h/, /x/, /ɾ/</td>
+  <td>H</td>
+ </tr>
+ <tr>
+  <td>I</td>
+  <td>/i/</td>
+  <td>I</td>
+ </tr>
+ <tr>
+  <td>K</td>
+  <td>/kʰ/, /k/</td>
+  <td>K</td>
+ </tr>
+ <tr>
+  <td>L</td>
+  <td>/l/, /ɾ/</td>
+  <td>L</td>
+ </tr>
+ <tr>
+  <td>M</td>
+  <td>/m/</td>
+  <td>M</td>
+ </tr>
+ <tr>
+  <td>N</td>
+  <td>/n/</td>
+  <td>N</td>
+ </tr>
+ <tr>
+  <td>O</td>
+  <td>/o/</td>
+  <td>O</td>
+ </tr>
+ <tr>
+  <td>P</td>
+  <td>/pʰ/, /p/, /f/</td>
+  <td>P</td>
+ </tr>
+ <tr>
+  <td>S</td>
+  <td>/s/, /θ/, /ʃ/, /z/</td>
+  <td>S</td>
+ </tr>
+ <tr>
+  <td>T</td>
+  <td>/tʰ/, /t/</td>
+  <td>T</td>
+ </tr>
+ <tr>
+  <td>U</td>
+  <td>/u/</td>
+  <td>U</td>
+ </tr>
+ <tr>
+  <td>W</td>
+  <td>/w/, /u/, /v/</td>
+  <td>Ŭ aŭ U</td>
+ </tr>
+ <tr>
+  <td>Y</td>
+  <td>/j/, /i/</td>
+  <td>J aŭ I</td>
+ </tr>
+</table>
+
+
+<p>
+Ĉiu vorto (inkluzive de kunmetitaj vortoj) estas ĉiam akcentata sur la lasta silabo.<br />
+</p>
+
+<ul>
+<li><b>bamu</b> (saluton) - baMU (/ba'mu/)</li>
+<li><b>dasopya</b> (mondo-paroli) - dasoPYA (/daso'pja/)</li>
+</ul>
+
+<br />
+<h3>
+Vortoj
+</h3>
+
+<p>
+Vortoj povas esti uzataj kiel ajna vortparto.<br />
+</p>
+
+<ul>
+<li><b>syo</b> - vivo, viva, vivi</li>
+</ul>
+
+<p>
+Se la kunteksto ne klarigas, oni povas aldoni sufiksojn.<br />
+</p>
+
+<ul>
+<li><b>syogen</b> - vivo (vivo-koncepto)</li>
+<li><b>syobey</b> - viva (vivo-rilata)</li>
+<li><b>syosyu</b> - vivi (vivo-fari)</li>
+</ul>
+
+<p>
+Ne ekzistas artikoloj, kaj vortoj povas esti unuopaj aŭ plurale defaŭlte.<br />
+</p>
+
+<ul>
+<li><b>koko</b> - roko, rokoj, la roko</li>
+<li><b>moy koko</b> - multoblaj rokoj</li>
+<li><b>man koko</b> - unu roko</li>
+</ul>
+
+<p>
+Kunmetitaj vortoj estas libere formitaj uzante priskribajn vortojn unue, kaj la bazvorton fine.<br />
+</p>
+
+<ul>
+<li><b>panatina</b> (man-cifero) - fingro</li>
+<li><b>kwepagi</b> (kontraŭ-malfermi) - fermi</li>
+<li><b>musumodyokebo</b> (dormo-meblo-kovrilo) - littuko</li>
+</ul>
+
+<br />
+<h3>
+Frazoj
+</h3>
+
+<p>
+En frazoj, "<b>a</b>" antaŭas subjektojn, "<b>i</b>" antaŭas verbojn, kaj "<b>e</b>" antaŭas objektojn. Kunteksto ĉiam venas ĉe la komenco. <br />
+</p>
+
+<ul>
+<li><b>pindin, a dey i mabo e kabay</b> ("ĉi-loko, [a] besto [i] manĝaĵo [e] herbo") - Ĉi tie, la besto manĝas herbon</li>
+</ul>
+
+<p>
+Adjektivoj venas antaŭ substantivoj, kaj adverboj venas antaŭ verboj. Alie, ili estas identaj. <br />
+</p>
+
+<ul>
+<li><b>lase sapa i lase suki</b> ("rapida fiŝo [i] rapida naĝi") - Rapida fiŝo naĝas rapide </li>
+</ul>
+
+<p>
+Prepozicioj venas antaŭ substantivoj. <br />
+</p>
+
+<ul>
+<li><b>daw i sami law gemo</b> ("persono [i] promeni en ĝardeno") - La persono promenas en la ĝardeno </li>
+</ul>
+
+<br />
+<h3>
+Gramatiko
+</h3>
+
+<p>
+<b>mye</b> formas pasintan tempon, <b>dyu</b> formas estontecon.<br />
+</p>
+
+<ul>
+<li><b>kyu i mye legi; bay i dyu legi</b> ("vi [i] jam labori; mi [i] post labori") - Vi laboris; Mi laboros.</li>
+</ul>
+
+<p>
+Helpverboj rekte sekvas unu la alian.<br />
+</p>
+
+<ul>
+<li><b>swe i subi sedi plu</b> ("ri [i] devi provi iri") - Ri devus provi iri </li>
+</ul>
+
+<p>
+<b>hoy</b> markas posedon, sed ankaŭ povas rearanĝi adjektivojn.<br />
+</p>
+
+<ul>
+<li><b>kopo hoy bay</b> ("libro de mi") - mia libro </li>
+<li><b>kopo hoy lago</b> ("libro de ruĝa") - ruĝa libro </li>
+</ul>
+
+<p>
+Por formi demandon, komencu la frazon per <b>kay</b> kaj aligu <b>kya</b> al la nekonataĵo.<br />
+</p>
+
+<ul>
+<li><b>kay a lon i swa e kya?</b> ("demando [a] tempo [i] estas [e] kio") - Kioma horo estas?</li>
+</ul>
+
+<p>
+<b>teso</b> povas krei dependan subfrazon, kiel "ke" aŭ "kiu."<br />
+</p>
+
+<ul>
+<li><b>swe i dani e gwa teso i swa e gwi</b> ("ri [i] ŝatas [e] domo kiu [i] estas [e] bona") - Ri ŝatas domojn kiuj estas bonaj</li>
+</ul>
+
+<p>
+Dasopya estas por-fali, permesante ajnan vorton kiu estas evidenta de kunteksto esti preterlasita (aŭ faligita).<br />
+</p>
+
+<ul>
+<li><b>hapa e bote</b> ("floro [e] blua") - La floro (estas) blua</li>
+<li><b>i mapi</b> ("[i] kompreni") - (Mi) komprenas</li>
+<li><b>e masu</b> ("[e] mateno") - (Estas) mateno</li>
+</ul>
+
+<p>
+"<b>u</b>" markas nerektajn objektojn.<br />
+</p>
+
+<ul>
+<li><b>i day e san u swe</b> ("[i] doni [e] tiu [u] ri") - Donu tion al ri</li>
+</ul>
+
+<p>
+"<b>o</b>" markas ajnan vorton ekster la baza vortprovizo.<br />
+</p>
+
+<ul>
+<li><b>oKanada</b> - Kanado</li>
+<li><b>oPisa</b> - Pico</li>
+</ul>
+
+<br />
+<h3>
+Bazaj Vortoj
+</h3>
+
+<table class="stried" style="width:50%; margin-left:0px;">
+ <tr>
+ <th style="width:30%">Dasopya</th>
+ <th style="width:80%">Esperanto</th>
+ </tr>
+ <tr>
+ <td>pin</td>
+ <td>ĉi tio</td>
+ </tr>
+ <tr>
+ <td> san</td>
+ <td>tio, tiu</td>
+ </tr>
+ <tr>
+ <td>bay</td>
+ <td>mi</td>
+ </tr>
+ <tr>
+ <td>kyu</td>
+ <td>vi (singularo, pluralo)</td>
+ </tr>
+ <tr>
+ <td>swe</td>
+ <td>ri, li, ŝi, ili</td>
+ </tr>
+ <tr>
+ <td>daw</td> <!-- STOPPED HERE -->
+ <td>persono, homo, unu (pronomo)</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>kuŝi</td>
+ <td>jes</td>
+ </tr>
+ <tr>
+ <td>kwe</td>
+ <td>(inversa prefikso), ne, malo</td>
+ </tr>
+ <tr>
+ <td>kate</td>
+ <td>ĝusta, preciza, ĝusta</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>bamu</td>
+ <td>saluton, saluton, adiaŭon</td>
+ </tr>
+ <tr>
+ <td>gwi</td>
+ <td>bona</td>
+ </tr>
+ <tr>
+ <td>kwegwi</td>
+ <td>malbona</td>
+ </tr>
+ <tr>
+ <td>gadu</td>
+ <td>dankon, dankemon</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>swa</td>
+ <td>estas, estas, esti</td>
+ </tr>
+ <tr>
+ <td>syu</td>
+ <td>fari, fari</td>
+ </tr>
+ <tr>
+ <td>tago</td>
+ <td>doni, doni, premii, elsendi</td>
+ </tr>
+ <tr>
+ <td>pya</td>
+ <td>paroli, paroli, parolo, lingvo, besta sono</td>
+ </tr>
+ <tr>
+ <td>plu</td>
+ <td>moviĝi, iri</td>
+ </tr>
+ <tr>
+ <td>boti</td>
+ <td>voli, deziri, intencon, volo</td>
+ </tr>
+ <tr>
+ <td>tey</td>
+ <td>povas, povi, povas, -povi</td>
+ </tr>
+ <tr>
+ <td>subi</td>
+ <td>devas, devus, devi, devi</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>polu</td>
+ <td>ĉio, ĉio, ĉiu, ajna, ĉiu</td>
+ </tr>
+ <tr>
+ <td>tay</td>
+ <td>multaj, tre, vere, multe, multe</td>
+ </tr>
+ <tr>
+ <td>pene</td>
+ <td> iuj, iom, prefere, belaj</td>
+ </tr>
+ <tr>
+ <td>moy</td>
+ <td>obla</td>
+ </tr>
+ <tr>
+ <td>baw</td>
+ <td>pli</td>
+ </tr>
+ <tr>
+ <td>buki</td>
+ <td>komparu, kiel, ol, relative</td>
+ </tr>
+ <tr>
+ <td>byu</td>
+ <td>plej (superlativo)</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>sya</td>
+ <td>kaj, plus, aldonu, ankaŭ, aldone</td>
+ </tr>
+ <tr>
+ <td>lodu</td>
+ <td>aŭ, ĉu</td>
+ </tr>
+ <tr>
+ <td>bemyu</td>
+ <td>sed, tamen</td>
+ </tr>
+ <tr>
+ <td>begu</td>
+ <td>se, hipoteze, scenaro</td>
+ </tr>
+ <tr>
+ <td>taku</td>
+ <td>kaŭzo, ĉar, deveno, de (pro)</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>bone</td>
+ <td>demando, (demandosigno)</td>
+ </tr>
+ <tr>
+ <td>kya</td>
+ <td>kio, kio</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>mia</td>
+ <td>jam, antaŭe, (markilo de pasinta tempo)</td>
+ </tr>
+ <tr>
+ <td>dyu</td>
+ <td>devos, post, (signo de estonta tempo)</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>knabo</td>
+ <td>por, ĉe, de, en, sur, (prepozicia markilo)</td>
+ </tr>
+ <tr>
+ <td>telu</td>
+ <td>al, por (celo, celo), por</td>
+ </tr>
+ <tr>
+ <td>doke</td>
+ <td>de, for (de), (ekster) de</td>
+ </tr>
+ <tr>
+ <td>diri</td>
+ <td>direkto, al, al, gvidado, orientiĝo</td>
+ </tr>
+ <tr>
+ <td>pagi</td>
+ <td>supre, supren, super, supre, levi (ion), leviĝi</td>
+ </tr>
+ <tr>
+ <td>gyu</td>
+ <td>antaŭe, antaŭ</td>
+ </tr>
+ <tr>
+ <td>leĝo</td>
+ <td>en, interne</td>
+ </tr>
+ <tr>
+ <td> jes</td>
+ <td>flanko, apuda</td>
+ </tr>
+ <tr>
+ <td>byo</td>
+ <td> tra, trans, trans-</td>
+ </tr>
+ <tr>
+ <td>koy</td>
+ <td>malproksime, tele-</td>
+ </tr>
+ <tr>
+ <td>akaro</td>
+ <td> inter, inter, inter-</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>sojo</td>
+ <td>0</td>
+ </tr>
+ <tr>
+ <td>viro</td>
+ <td>1</td>
+ </tr>
+ <tr>
+ <td>swi</td>
+ <td>2</td>
+ </tr>
+ <tr>
+ <td>tya</td>
+ <td>3</td>
+ </tr>
+ <tr>
+ <td>pelo</td>
+ <td>4</td>
+ </tr>
+ <tr>
+ <td>tila</td>
+ <td>5</td>
+ </tr>
+ <tr>
+ <td>seli</td>
+ <td>6</td>
+ </tr>
+ <tr>
+ <td>peke</td>
+ <td>7</td>
+ </tr>
+ <tr>
+ <td>tepyo</td>
+ <td>8</td>
+ </tr>
+ <tr>
+ <td>miko</td>
+ <td>9</td>
+ </tr>
+ <tr>
+ <td>ley</td>
+ <td>10</td>
+ </tr>
+ <tr>
+ <td>sehu</td>
+ <td>100</td>
+ </tr>
+ <tr>
+ <td>siku</td>
+ <td>1000</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>bya</td>
+ <td>viro, viro, knabo</td>
+ </tr>
+ <tr>
+ <td>maw</td>
+ <td>ino, virino, knabino</td>
+ </tr>
+ <tr>
+ <td>domaj</td>
+ <td>amiko</td>
+ </tr>
+ <tr>
+ <td>milu</td>
+ <td>amo</td>
+ </tr>
+ <tr>
+ <td>pana</td>
+ <td>mano, tenilo, teni</td>
+ </tr>
+ <tr>
+ <td>loy</td>
+ <td>okulo, vidi, rigardi, rigardi</td>
+ </tr>
+ <tr>
+ <td>deka</td>
+ <td>aŭdi, aŭdi, aŭskulti</td>
+ </tr>
+ <tr>
+ <td>paka</td>
+ <td>kapo, gvidanto</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>dey</td>
+ <td>besto, estaĵo</td>
+ </tr>
+ <tr>
+ <td>matya</td>
+ <td>kato, felino</td>
+ </tr>
+ <tr>
+ <td>hugwa</td>
+ <td>hundo, hundo</td>
+ </tr>
+ <tr>
+ <td>pila</td>
+ <td>birdo</td>
+ </tr>
+ <tr>
+ <td>sapa</td>
+ <td>fiŝo</td>
+ </tr>
+ <tr>
+ <td>pasa</td>
+ <td>planti, planti</td>
+ </tr>
+ <tr>
+ <td>kikaw</td>
+ <td>arbo</td>
+ </tr>
+ <tr>
+ <td>hapa</td>
+ <td>floro</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>gwa</td>
+ <td>konstruado, domo, konstrui, konstrui</td>
+ </tr>
+ <tr>
+ <td>gan</td>
+ <td>ĉambro</td>
+ </tr>
+ <tr>
+ <td>kiso</td>
+ <td>seĝo, sidi</td>
+ </tr>
+ <tr>
+ <td>lado</td>
+ <td>table, skribotable</td>
+ </tr>
+ <tr>
+ <td>pyo</td>
+ <td>uzi</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>doy</td>
+ <td>granda</td>
+ </tr>
+ <tr>
+ <td>kumye</td>
+ <td>longa, longa</td>
+ </tr>
+ <tr>
+ <td>sike</td>
+ <td>koloro, nuanco</td>
+ </tr>
+ <tr>
+ <td>lago</td>
+ <td>ruĝa</td>
+ </tr>
+ <tr>
+ <td>lamye</td>
+ <td>flava</td>
+ </tr>
+ <tr>
+ <td>bote</td>
+ <td>blua</td>
+ </tr>
+ <tr>
+ <td>kahe</td>
+ <td>nigra</td>
+ </tr>
+ <tr>
+ <td>buso</td>
+ <td>blanka</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>lon</td>
+ <td>tempo, kiam</td>
+ </tr>
+ <tr>
+ <td>tonu</td>
+ <td>jaro</td>
+ </tr>
+ <tr>
+ <td>loso</td>
+ <td>luno, monato</td>
+ </tr>
+ <tr>
+ <td>han</td>
+ <td>tago, dato</td>
+ </tr>
+ <tr>
+ <td>kotu</td>
+ <td>horo</td>
+ </tr>
+ <tr>
+ <td>mebyu</td>
+ <td>minuto</td>
+ </tr>
+ <tr>
+ <td>busu</td>
+ <td>dua</td>
+ </tr>
+ <tr>
+ <td>-</td>
+ <td></td>
+ </tr>
+ <tr>
+ <td>mabo</td>
+ <td>manĝaĵo, manĝo, manĝi, konsumi</td>
+ </tr>
+ <tr>
+ <td>bugo</td>
+ <td>trinki, trinki</td>
+ </tr>
+ <tr>
+ <td>kupa</td>
+ <td>frukto</td>
+ </tr>
+ <tr>
+ <td>hidwa</td>
+ <td>legomo</td>
+ </tr>
+ <tr>
+ <td>lano</td>
+ <td>pano, pano, bulko</td>
+ </tr>
+ <tr>
+ <td>simo</td>
+ <td>rizo</td>
+ </tr>
+ <tr>
+ <td>toki</td>
+ <td>kuiri</td>
+ </tr>
+ <tr>
+ <td>...</td>
+ <td></td>
+ </tr>
+</table>
+
+<br /><br />
+<p style="color:grey;">
+Tradukis Vecderg kaj Google Translate. Paĝa stilo bazita sur elefen.org
+</p>
+
+</div> 
+<!-- end Esperanto section -->
+</div> 
+</div> <!-- section won't function without this for some reason, so here -->
+
+
+<div id="spanish">
+
+<br />
+<h1>Introduction en Español</h1>
+<hr> 
+<a href="dasopya.html">&lt; Back to Contents</a> <br />
+
+<br />
+
+ <table>
+  <tr>
+    <th>Español</th>
     <th>Dasopya</th>
   </tr>
   <tr>
@@ -169,7 +1843,7 @@ Every letter is always pronounced the same. Some letters have multiple pronuncia
 
 
 <p>
-Every word is always stressed on the last syllable, even compounds.<br />
+Every word (including compound words) is always stressed on the last syllable.<br />
 </p>
 
 <ul>
@@ -296,11 +1970,13 @@ To form a question, begin the sentence with <b>kay</b> and attach <b>kya</b> to 
 </ul>
 
 <p>
-If a sentence can be understood without it, parts of the sentence can be dropped.<br />
+Dasopya is pro-drop, allowing any word that is obvious from context to be omitted (or dropped).<br />
 </p>
 
 <ul>
-<li><b>san e gwi</b> ("that [e] good") - That (is) good</li>
+<li><b>kado e bote</b> ("box [e] blue") - The box (is) blue</li>
+<li><b>i mapi</b> ("[i] understand") - (I) understand</li>
+<li><b>e masu</b> ("[e] morning") - (It is) morning</li>
 </ul>
 
 <p>
@@ -308,7 +1984,7 @@ If a sentence can be understood without it, parts of the sentence can be dropped
 </p>
 
 <ul>
-<li><b>i day e pin u swe</b> ("[i] give [e] this [u] them") - Give this to them</li>
+<li><b>i day e san u swe</b> ("[i] give [e] that [u] them") - Give that to them</li>
 </ul>
 
 <p>
@@ -316,7 +1992,8 @@ If a sentence can be understood without it, parts of the sentence can be dropped
 </p>
 
 <ul>
-<li><b>oMehiko</b> - Mexico</li>
+<li><b>oKanada</b> - Canada</li>
+<li><b>oPisa</b> - Pizza</li>
 </ul>
 
 <br />
@@ -338,50 +2015,6 @@ Basic Words
     <td>that</td>
   </tr>
   <tr>
-    <td>man</td>
-    <td>one</td>
-  </tr>
-  <tr>
-    <td>bay</td>
-    <td>I, me</td>
-  </tr>
-  <tr>
-    <td>kyu</td>
-    <td>you</td>
-  </tr>
-  <tr>
-    <td>swe</td>
-    <td>they (singular, plural)</td>
-  </tr>
-  <tr>
-    <td>daw</td>
-    <td>person, human, one (pronoun)</td>
-  </tr>
-  <tr>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>bya</td>
-    <td>male, man, boy</td>
-  </tr>
-  <tr>
-    <td>maw</td>
-    <td>female, woman, girl</td>
-  </tr>
-  <tr>
-    <td>-</td>
-    <td></td>
-  </tr>
-  <tr>
-    <td>swa</td>
-    <td>be</td>
-  </tr>
-  <tr>
-    <td>hay</td>
-    <td>to have, carry</td>
-  </tr>
-  <tr>
     <td>...</td>
     <td></td>
   </tr>
@@ -389,16 +2022,22 @@ Basic Words
 
 <br /><br />
 <p style="color:grey;">
-Translated by Vecderg. Page style based on elefen.org
+Translated by ---. Page style based on elefen.org
 </p>
 
-</div>
+</div> <!-- end Spanish section -->
 
 <br /><br /><br /><br />
 <hr> 
 
 
+<script type="text/javascript">
 
+	function onLoad(){
+		onLoad2();
+	}
+
+</script>
 
 </body>
 </html>
