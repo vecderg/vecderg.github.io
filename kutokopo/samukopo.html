@@ -14,7 +14,7 @@ body {
 	background-color:#26332F;
 }
 
-p, input, label, h1, h2{
+p, input, textarea, label, h1, h2{
 	color:white;
 	font-family:sans-serif;
 }
@@ -37,18 +37,22 @@ a {
 	font-family:sans-serif;
 }
 
-img, input, #searchholder, #checkholder, #check, #about, #aboutdisplay, #search, #vocabholder, h1, h2, hr{
+img, input, textarea, #searchholder, #checkholder, #check, #about, #aboutdisplay, #search, #vocabholder, #translateholder, h1, h2, hr{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-input {
+input, textarea {
 	padding: 14px 16px;
 	border: none;
 	border-bottom: 2px solid white;
 	background-color: transparent;
 	font-size:22px;
+}
+
+textarea {
+	border: 2px solid white;
 }
 
 #checkbox1,#checkbox2,#checkbox3 {
@@ -78,7 +82,11 @@ input {
 	width: 600px;
 }
 
-#vocab, p {
+#translateholder{
+	width: 800px;
+}
+
+#vocab, #translate, p {
 	font-size:22px;
 	line-height: 1.8;
 }
@@ -108,6 +116,23 @@ input {
 		document.getElementById("checkbox3").checked = false;
 		setData();
 		search();
+		setVisibility();
+	}
+	
+	function setHash(hash){
+		window.location.hash = hash;
+		setVisibility();
+	}
+	
+	function setVisibility(){
+		if(window.location.hash.substr(1) == "translator"){
+			document.getElementById("translator").style.display = "block";
+			document.getElementById("dictionary").style.display = "none";
+		}
+		else{
+			document.getElementById("translator").style.display = "none";
+			document.getElementById("dictionary").style.display = "block";
+		}
 	}
 
 	function setText(data){
@@ -232,6 +257,45 @@ input {
 		search();
 	}
 	
+	
+	function translation(){
+		let untranslate = document.getElementById("untranslate");
+		
+		untranslate.value = untranslate.value.toLowerCase();
+		
+		let translateArray = [];
+		
+		translateArray = untranslate.value.split(" ");
+		
+		for(var i=0; i<translateArray.length; i++){
+			if(translateArray[i] != " "){
+				if(translateArray[i].length < 6 || translateArray[i][0] == "o"){
+					for(var j=0; j<cleanedData.length; j++){
+						if(translateArray[i].toLowerCase() === cleanedData[j].toLowerCase().split(":")[0]){
+							translateArray[i] = translateArray[i] + " </br> " + cleanedData[j].split("</br>")[0];
+						}
+					}
+				}
+				else{
+					<!-- 2sylb word cannot have consonant in 2nd position -->
+					if(["a","e","i","o","u"].indexOf(translateArray[i][1]) < 0){
+						for(var j=0; j<cleanedData.length; j++){
+							let compareWord = cleanedData[j].toLowerCase().split(":")[0];
+							if(translateArray[i].slice(0,3) == compareWord){
+								translateArray[i] = translateArray[i] + " </br> " + cleanedData[j].split("</br>")[0];
+							}
+						}
+					}
+					
+				}
+				translateArray[i] = translateArray[i] + " </br> "
+			}
+		}
+		
+		document.getElementById("translate").innerHTML = stringData(translateArray);
+	}
+	
+	
 	function about(){
 		var x = document.getElementById("aboutdisplay");
 		if (x.style.display === "none") {
@@ -262,14 +326,17 @@ input {
 <br />
 <a href="dasopya.html">&lt; back to Kutokopo</a>
 
+<button onclick="setHash('')">Dictionary</button>
+<button onclick="setHash('translator')">Translator</button>
+
+<div id="dictionary">
 <h1>samukopo</h1>
 <h2>Dasopya Dictionary</h2>
 <br />
 <hr> 
-
 <br />
-
 <img src="dasopya/img/dasopyaflag.png" style="width:20%;">	
+
 <p onclick="about()" id="about">> About</p>
 <p id="aboutdisplay" style="display:none">
 Dasopya is a constructed language created for international communication. 
@@ -301,6 +368,36 @@ Note that in Dasopya, compound words are not lexicalized (e.g. rail-vehicle just
 	<p id="vocab">
 	<br /><br /><br /><br />
 	</p>
+</div>
+
+</div>
+
+<div id="translator">
+<h1>pyabyo</h1>
+<h2>Dasopya Translator</h2>
+<br />
+<hr> 
+<br />
+<img src="dasopya/img/dasopyaflag.png" style="width:20%;">	
+
+<p>
+MAJOR work in progress. Translation aide meant to translate word by word to help learners understand the literal meaning of a text. Based on Globasa's <a href="https://menalari.globasa.net/eng/tul/basatayti" target="_blank">translation aide</a>.
+</p>
+
+<br />
+<div id="untranslateholder">
+	<textarea id="untranslate"  oninput="translation()" rows="10" cols="50" placeholder="Translate..."></textarea
+	<br />
+	<!--<button id="search" onclick="search()" style="height:2.5em;width:6em">Search</button>-->
+</div>
+
+<div id="translateholder">
+	<p id="translate">Translation here...
+	<br /><br /><br /><br />
+	</p>
+</div>
+
+<br />
 </div>
 
 </div>
