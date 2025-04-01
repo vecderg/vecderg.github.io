@@ -129,7 +129,7 @@ textarea {
 	}
 	
 	function setVisibility(){
-		if(window.location.hash.substr(1) == "translator"){
+		if(window.location.hash.substr(1) == "translator" || window.location.hash.substr(1) == "pyabyo"){
 			document.getElementById("translator").style.display = "block";
 			document.getElementById("untranslate").focus();
 			document.getElementById("dictionary").style.display = "none";
@@ -268,7 +268,7 @@ textarea {
 		
 		let untranslatedStr = untranslate.value.toLowerCase();
 		<!-- remove punctuation + extra spaces--> 
-		untranslatedStr = untranslatedStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+		untranslatedStr = untranslatedStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`'~()]/g,"");
 		//untranslatedStr = untranslatedStr.replace(/\s{2,}/g," ");
 		
 		let translateArray = [];
@@ -429,7 +429,7 @@ textarea {
 <a href="dasopya.html">&lt; back to Kutokopo</a>
 
 <button onclick="setHash('')">Dictionary</button>
-<button onclick="setHash('translator')">Translator</button>
+<button onclick="setHash('pyabyo')">Translator</button>
 
 <div id="dictionary">
 <h1>samukopo</h1>
@@ -697,6 +697,7 @@ duso	soap/soapy
 dusya	lettuce
 dutyo	saturn
 dutyohan	saturday
+dway	(suffix) adds informality
 dwi	(adjective separation marker)
 dyu	shall/after/(future tense)
 dyulon	future
@@ -748,6 +749,7 @@ gosi	call/voice/summon
 gosu	area/zone/region/size/extent
 gosye	sticky/stick/adhere
 gosyelato	glue
+gosyesabo	(sticky) tape
 goy	thing/object/it
 goya	organ
 gubya	monster/beast/beastly
@@ -761,7 +763,6 @@ guso	hole / dig / gap
 gusodun	shovel
 guto	potato
 gwa	building/house/build/construct 
-gway	(suffix) adds informality
 gwi	good
 gwikwetaku	effective
 gyu	in front/front
@@ -844,6 +845,7 @@ kapu	shape/form/figure
 kaso	spoon
 kate	correct/accurate/right
 kati	hide/secret
+katyo	hammer/mallet/to hammer
 kay	question/(question marker)
 kebo	cover/shell/to cover/wrap 
 kebu	plan/agenda/program
@@ -929,6 +931,7 @@ kwaswibyosomyu	radius
 kwe	(inversion prefix) / no / opposite
 kwebade	weak
 kwebaki	to release/to free
+kwebaw	less
 kwebenu	false/fake
 kwebese	ugly
 kweboli	denounce/berate/reproach/condemn
@@ -942,10 +945,10 @@ kwedine	floppy/flabby/flaccid
 kwedome	young (age)
 kwedoy	small/little
 kwedupe	unprepared
+kwedway	(suffix) adds excess formality
 kwegesyo	melt/thaw
 kwegibe	unclear/ambiguous/obscure
 kweguse	inefficient
-kwegway	(suffix) adds excess formality
 kwegwisoki	addiction
 kwegyu	back/behind
 kwehapu	to separate
@@ -1184,6 +1187,7 @@ mebyu	minute (time)
 meda	blood / bleed
 medagodo	vein
 megyo	farm/cultivate/agricultural
+mehi	mix/blend/mixture
 melaw	breast
 melo	money/fund
 mesi	show/display/demonstration/demo
@@ -1280,6 +1284,7 @@ odonatu	donut / doughnut
 odoyti	germany
 odya	the letter j
 oenglan	england
+oesupanya	spain
 oga	the letter g
 ogey	gay
 ogitala	guitar
@@ -1347,6 +1352,7 @@ opisa	pizza
 oplanse	france
 oplasuma	plasma
 oploglamu	(computer) program
+opolun	forum
 opolusika	poland
 opotugalu	portugal
 oputi	foot (unit)
@@ -1367,7 +1373,6 @@ ososeti	sausage
 osukute	scooter
 osupageti	spaghetti
 osupamu	spam
-osupanya	spain
 osupondi	sponge
 osweli	sweden
 oswi	the letter x
@@ -1415,6 +1420,7 @@ pano	button
 panu	perfection/perfect
 paplo	ceiling/roof/top/lid
 pasa	plant / to plant
+paswi	whistle/hiss/fizzle/whiz/zip
 pata	apple
 pate	excited/excitement/enthusiasm
 pay	above/up/over/on top/lift (something)/rise
@@ -1494,7 +1500,7 @@ sadyo	rail/bar
 sadyoluso	train
 sagi	judge/assess/evaluate/judgement/critique
 sagyo	shadow/shade/to obscure
-sahi	to need/necessary/necessity
+sahi	to need/necessary/necessity/require/requirement
 sahu	law/rule
 saka	eagle/hawk/bird of prey, family: accipitridae
 sake	attribute/property/feature/trait
@@ -1506,6 +1512,7 @@ saley	twisted/spiral/helix
 sami	walk/stroll/hike
 samu	name/word
 samudoli	to write
+samuhapu	vocabulary
 samye	shiny/sparkle/polish
 san	that/those
 sandin	there
@@ -1622,7 +1629,7 @@ supo	pants
 supyo	cliff
 sute	acid/sour/acidic ~ vinegar
 sutwi	mock/ridicule/deride
-swa	to be
+swa	is/are/to be
 swe	them/he/she (3rd person)
 swi	two
 swikwatya	two thirds / 2\\3
