@@ -91,6 +91,10 @@ textarea {
 	line-height: 1.8;
 }
 
+#translate {
+	line-height: 1.4;
+}
+
 #about, #aboutdisplay {
 	font-size: 18px;
 	width:300px;
@@ -127,11 +131,13 @@ textarea {
 	function setVisibility(){
 		if(window.location.hash.substr(1) == "translator"){
 			document.getElementById("translator").style.display = "block";
+			document.getElementById("untranslate").focus();
 			document.getElementById("dictionary").style.display = "none";
 		}
 		else{
 			document.getElementById("translator").style.display = "none";
 			document.getElementById("dictionary").style.display = "block";
+			document.getElementById("searchbar").focus();
 		}
 	}
 
@@ -257,42 +263,138 @@ textarea {
 		search();
 	}
 	
-	
 	function translation(){
 		let untranslate = document.getElementById("untranslate");
 		
-		untranslate.value = untranslate.value.toLowerCase();
+		let untranslatedStr = untranslate.value.toLowerCase();
+		<!-- remove punctuation + extra spaces--> 
+		untranslatedStr = untranslatedStr.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+		//untranslatedStr = untranslatedStr.replace(/\s{2,}/g," ");
 		
 		let translateArray = [];
 		
-		translateArray = untranslate.value.split(" ");
+		// split by newline
+		let displayArray = untranslatedStr.split(/\r?\n/);
 		
-		for(var i=0; i<translateArray.length; i++){
-			if(translateArray[i] != " "){
-				if(translateArray[i].length < 6 || translateArray[i][0] == "o"){
-					for(var j=0; j<cleanedData.length; j++){
-						if(translateArray[i].toLowerCase() === cleanedData[j].toLowerCase().split(":")[0]){
-							translateArray[i] = translateArray[i] + " </br> " + cleanedData[j].split("</br>")[0];
-						}
-					}
-				}
-				else{
-					<!-- 2sylb word cannot have consonant in 2nd position -->
-					if(["a","e","i","o","u"].indexOf(translateArray[i][1]) < 0){
+		<!-- let displayString = stringData(untranslate.value.split("\n"))-->
+		let displayString = "";
+		<!-- Loop through linebreaks -->
+		for(var h=0; h<displayArray.length; h++){
+			displayString = displayString + displayArray[h] + " </br> ";
+			translateArray = displayArray[h].split(" ");
+			<!-- Loop through words -->
+			
+			let workingStr = "";
+			let cutLength = 3; //how much of workingStr to cut
+			
+			for(var i=0; i<translateArray.length; i++){
+				workingStr = translateArray[i];
+				
+				
+				// Break down word if not root word or loanword or letter name
+				while( workingStr.length > 5 && ["a","e","i","o","u"].indexOf(workingStr[0]) < 0 ){
+					debugger;
+					// 2sylb word cannot have consonant in 2nd position
+					// GUARANTEED 1 SYLB
+					if(["a","e","i","o","u"].indexOf(workingStr[1]) < 0){
+						cutLength = 3;
+						// check for match in dictionary and add if exists, then cut workingStr down
+						// to not include 1 syllable word
 						for(var j=0; j<cleanedData.length; j++){
 							let compareWord = cleanedData[j].toLowerCase().split(":")[0];
-							if(translateArray[i].slice(0,3) == compareWord){
-								translateArray[i] = translateArray[i] + " </br> " + cleanedData[j].split("</br>")[0];
+							if(workingStr.slice(0,3) == compareWord){
+								displayString = displayString + "- " + cleanedData[j];
+								cutLength = 3;
+								break;
+							}
+							else if(workingStr.slice(0,4) == compareWord){
+								displayString = displayString + "- " + cleanedData[j];
+								cutLength = 4;
+								break;
 							}
 						}
+						// in update, check if word ends in w/y/n to check if 4 letter word
+						workingStr = workingStr.slice(cutLength,workingStr.length);
 					}
-					
+					// 1sylb words cannot have anything not w/y/n as 3rd letter
+					else if( ["w","y","n"].indexOf(workingStr[2]) > -1 ){
+						// 1sylb words cannot have vowel as 4th letter
+						// GUARANTEED 2 SYLB
+						if(["a","e","i","o","u"].indexOf(workingStr[3]) > -1){
+							cutLength = 4;
+							// check for match in dictionary and add if exists, then cut workingStr down
+							// to not include 2 syllable word
+							for(var j=0; j<cleanedData.length; j++){
+								let compareWord = cleanedData[j].toLowerCase().split(":")[0];
+								if(workingStr.slice(0,4) == compareWord){ 
+									displayString = displayString + "- " + cleanedData[j];
+									cutLength = 4;
+									break;
+								}
+								else if(workingStr.slice(0,5) == compareWord){
+									displayString = displayString + "- " + cleanedData[j];
+									cutLength = 5;
+									break;
+								}
+							}
+							workingStr = workingStr.slice(cutLength,workingStr.length);
+						}
+						// 2sylb words with w/y/n cannot have consonant as 4th letter
+						// GUARANTEED 1 SYLB
+						else{
+							cutLength = 3;
+							// check for match in dictionary and add if exists, then cut workingStr down
+							// to not include 1 syllable word
+							for(var j=0; j<cleanedData.length; j++){
+								let compareWord = cleanedData[j].toLowerCase().split(":")[0];
+								if(workingStr.slice(0,3) == compareWord){
+									displayString = displayString + "- " + cleanedData[j];
+									cutLength = 3;
+									break;
+								}
+								else if(workingStr.slice(0,4) == compareWord){
+									displayString = displayString + "- " + cleanedData[j];
+									cutLength = 4;
+									break;
+								}
+							}
+							// in update, check if word ends in w/y/n to check if 4 letter word
+							workingStr = workingStr.slice(cutLength,workingStr.length);
+						}
+					}
+					// 1sylb words cannot have a vowel as 2nd letter AND no w/y/n in 3rd letter
+					// GUARANTEED 2 SYLB
+					else{
+						cutLength = 4;
+						// check for match in dictionary and add if exists, then cut workingStr down
+						// to not include 4 letter word
+						for(var j=0; j<cleanedData.length; j++){
+							let compareWord = cleanedData[j].toLowerCase().split(":")[0];
+							if(workingStr.slice(0,4) == compareWord){
+								displayString = displayString + "- " + cleanedData[j];
+								cutLength = 4;
+								break;
+							}
+							else if(workingStr.slice(0,5) == compareWord){
+								displayString = displayString + "- " + cleanedData[j];
+								cutLength = 5;
+								break;
+							}
+						}
+						// in update, check if word ends in w/y/n to check if 5 letter word
+						workingStr = workingStr.slice(cutLength,workingStr.length);
+					}
 				}
-				translateArray[i] = translateArray[i] + " </br> "
+				for(var j=0; j<cleanedData.length; j++){
+					if(workingStr.toLowerCase() === cleanedData[j].toLowerCase().split(":")[0]){
+						displayString = displayString + "- " + cleanedData[j];
+					}
+				}
+
 			}
 		}
 		
-		document.getElementById("translate").innerHTML = stringData(translateArray);
+		document.getElementById("translate").innerHTML = displayString;
 	}
 	
 	
