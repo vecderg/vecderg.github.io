@@ -384,6 +384,15 @@ textarea {
 				if(workingStr != "" && cleanerData.indexOf(workingStr) > -1){
 					displayString = displayString + "- " + cleanedData[cleanerData.indexOf(workingStr)];
 				}
+				else if(workingStr != ""){
+					if(workingStr.slice(0,1) == "o"){
+						displayString = displayString + "- " + workingStr + ": (" + workingStr.slice(1,workingStr.length) + ")? </br>";
+					}
+					else{
+						displayString = displayString + "- " + workingStr + ": ? </br>";
+					}
+					
+				}
 			}
 		}
 		
@@ -533,7 +542,7 @@ bato	board/plank/beam/slab
 batya	bee/wasp/hornet, superfamily: apoidea
 baw	more
 bawdani	prefer/preference
-bay	me (1st person)
+bay	I/me (1st person pronoun)
 bebe	repeat/again/re-
 bebedoli	record/rewrite(?)
 bebegen	pattern/motif/repetition
@@ -636,6 +645,7 @@ desyo	pile/heap/mass
 dey	animal/creature
 dibyu	anxious/nervous
 digyo	home/dwelling/domestic/reside/live in
+digyodey	pet (animal), domesticated animal
 dihu	sympathy/compassion/pity
 diko	mail/letter/postal
 dilo	wall
@@ -1046,6 +1056,8 @@ kyalon	when
 kyamohu	how
 kyatemu	why
 kyo	center/middle
+kyohan	noon
+kyohanmabo	lunch
 kyokwa	half
 kyu	you (2nd person)
 labe	round/circle/around
@@ -1100,7 +1112,7 @@ leyswiloso	december
 leytya	thirteen / 13
 libo	filter/sieve/colander/ to filter
 libu	letter/character/symbol/sign
-lidu	worry/concern
+lidu	worry/concern/to care/fret
 lihu	logic/reason
 lina	tongue/taste/lick
 lipyo	needle/pin
@@ -1161,6 +1173,7 @@ mapu	slope/incline/tilt/ramp/lean
 maslo	window/screen
 masoy	honey
 masu	morning
+masumabo	breakfast
 maswe	holy/sacred
 masyo	swamp/fen/bog/marsh
 masyu	fashion/trend/fad
@@ -1188,9 +1201,11 @@ mesi	show/display/demonstration/demo
 metay	intestines
 meti	to wait
 metu	night/evening
+metumabo	dinner
 mewi	kiss
 mey	any/ever/at all (emphatic particle)
 meydipu	anyway
+meygoy	anything/whichever
 mida	lamb/sheep, species: ovis aries
 midyo	hell/hellish/to damn
 miko	nine
@@ -1624,7 +1639,7 @@ supyo	cliff
 sute	acid/sour/acidic ~ vinegar
 sutwi	mock/ridicule/deride
 swa	is/are/to be
-swe	them/he/she (3rd person)
+swe	them/he/she (3rd person pronoun)
 swi	two
 swikwatya	two thirds / 2\\3
 swiley	twenty / 20
