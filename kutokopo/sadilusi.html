@@ -15,6 +15,10 @@
 
 	function onLoad2(){
 		setLanguage();
+		//dark mode
+		if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			toggleLight();
+		}
 	}
 	
 	function setLanguage(){
@@ -43,6 +47,20 @@
 		document.getElementById(showLang).style.display = "block";
 		window.location.hash = showLang;
 		window.scrollTo(0, 0);
+	}
+	
+	function toggleLight(){
+		var element = document.body;
+		element.classList.toggle("dark-body");
+		
+		tablestuff = document.getElementsByTagName('th');
+		for(var i = 0; i < tablestuff.length; i++) {
+			tablestuff[i].classList.toggle("dark-th");
+		}
+		tablestuff = document.getElementsByClassName('striped');
+		for(var i = 0; i < tablestuff.length; i++) {
+			tablestuff[i].classList.toggle("dark-table");
+		}
 	}
 
 	
@@ -75,6 +93,8 @@
 ||
 <button onclick="showLanguage('esperanto')">Esperanto</button>
 <button onclick="showLanguage('tokipona')">toki pona</button>
+<br /><br />
+<button onclick="toggleLight()" style="height:40px;width:40px;font-size:24px">💡</button>
 
 
 <p id="language">

@@ -40,6 +40,11 @@ img {
  margin:auto;
 }
 
+body {
+  background-color: white;
+  color: black;
+}
+
 a {
  text-decoration:none;	
 }
@@ -49,4 +54,17 @@ a:visited{
 
 .striped tr:nth-child(odd){
  background-color: #e9f9f9;
+}
+
+.dark-body {
+  background-color: #111111;
+  color: white;
+}
+
+.dark-table tr:nth-child(odd){
+  background-color: #333333;
+}
+
+.dark-th{
+  color: black;
 }
