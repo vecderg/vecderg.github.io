@@ -3,10 +3,8 @@
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <script type="text/javascript">
 
-	// Default shell for PICO-8 0.2.2 (includes @weeble's gamepad mod 1.0)
-	// This file is available under a CC0 license https://creativecommons.org/share-your-work/public-domain/cc0/
-	// (note: "this file" does not include any cartridge or cartridge artwork injected into a derivative html file when using the PICO-8 html exporter)
-
+	// Default shell for PICO-8 0.2.6 (includes @weeble's gamepad mod 1.0)
+	
 	// options
 
 	// fullscreen, sound, close button at top when playing on touchscreen
@@ -632,7 +630,7 @@
 
 		}
 		e.type = "application/javascript";
-		e.src = "konakin.js";
+		e.src = "konatin.js";
 		e.id = "e_script";
 		
 		document.body.appendChild(e); // load and run
@@ -982,7 +980,7 @@ canvas{
 
 .p8_start_button{
 	cursor:pointer;
-	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAEmUlEQVR4Ae2dv2obTxDHV7ZrQxAihSGdRC6tS6XRCwj8CCZPEBBC3XHdEQ70BEaPIPALGIJdurWNrvvBrwhGBPwEKVY5r/bP7J/b813k74crxO5od2a+szMtAwAAAAAAAAAAAAAAAAAAAM3Ss1qkixljLMsLx3XJgEOY1cHqg6//l5ffPn38UN9bF8ecBDAlkU6uuGvVgPCVDsNFYF//q3WvgpO2vCrviN4OqAVt9k3r1aK6S2y5Xxrr5cXy01sArbCEwtJWlhf//fptTVOdAOL6X6fCwrALEHZ9FdhqdeUeZEMaRL/CNwnRBJAuNl3gOJnrxKY264BOVadBxaoVuwDu7ZXwyStU99j4sfThzY2HKBp4t6C4wy0stvqRRx/OwVd4CCCO0+jeE4fHGiHB/kf3M1CA1eoquAat9u6zWjwqXcz453KRl/8mAxc/s7xwF8MiADG1iBiCW0T0zhbmfyw/peKIMwMCYhDNXMrH3RPxa87/MD8dD3cVQLzPFIN2PSBIIrbqNBcbX/9bea/eL8A9BvUBSh4TAQTE5vUXLw3i+hlHANOoCfNVu8UXia2aSaH9d7/X5KdvbwQAAAAAAAAAAAAAAADQFukFS+f9w47xqOsOltvD1uDkH/Cx3DL2+hSyH9tDEqDX/S60x7CvFUA2I40hgEPSh3/bTrmXwWytGC9mjLEsLxw1SOfdUqWLMyBbM1Zud98+k/FUNs6LLC+4DE7SdmyodHQIZ+vdZ8oj/0QZgmd4Ou+3KElHBdD2nOVtIrX76ndwBvmbaDHAky5k+XSQnI+GN3fXhAang8RUv15yavVDCwqFz2rdtKC6ULmV2057j6B9AcTSPh0k6phN2ciSfSuqzb5mpmFzyAJIub7flJr2wkZV9l+eH/fMhn1L4TPGGHt4OjOJ3YXst/wC7jelVP5q4S8Hx8vBsVNRm7O/vE1OBwk/n0/y4ClyaEOY17VamJPx9Cf/tSm5TUSWtwk/czeEy20672c/2hkDrQnw8vyobQg8+1WrCc6+1Hy0ZOtXDd7vEJayLA2Dak5o1TJlmc6+eF223n3vtAVpH8T9pjwfDW/urrVJX94m37++ZvDh6ezL5/9NqRe3aj6phui1eDfPr5iRKuPVbCCU4DKYir1KPa9u6WQIYMy4mCPTkHCRgQvQYm/5NwSga9NFAFEGdcYCDxm06ebrxCfapBeMf+CNNFANkMbIfYmQQdqajKeT8VT9l3Yd1NKA0EbMtXYR1NKA6F1iuqXZwFfwFBrXwDq0IUCDGlizjxH91r0oTEVgaTLWyUwMarSgODKoZU4UOLpQa+8DSW9HA9R7+w0KqQAAAAAAAAAAAAAAAAAAAAAAAMYY69X5c7qY8R9ZXmi3srwQbUy/vc6sIAzUuypj/ltccfGZG0u+aQ95a6SkqIvq72rF+l9pXTqK/rujD1YbwmeTq14cNSdMsNO0jXvYvgky+dwoJ00cqn2wpr5h+nvYbpil1merBlH6T60XQDxnqe2anrypjajrVYKqXWv8UkWrLZ7wmWhrb/9KAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB48AfKh+uZcAHXxQAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=");
+	background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAEq0lEQVR4Ae2dv2ojOxTGlcR14GLMLQLbOVzfNqVv4xcw5BHCfYILxrgbpjOLwU8Q8giGfYGFxVumTUKmW9hiWczCPsEWylVk/Tk60mg8E+/3Y4pB0miOvu/onFYAAAAAAAAAAAAAAAAAAACAZjkJrigWMyFEuVwxx40FEmJZHegY9AB8GN/e3Pz77s8/6kcbFIdrgE9EWlznyWmZnLN8fYnPOajP1SdRCWdMRWXeaVSC8M1njqtBe5aYYm5eLldfvv3IeNXqx2nT42SH3LpYzKQfhMP2lLzUapYuWdkr1d3drTM8O7YoMzLGGTYg7V6rEKUEzK+a8IBvT3YPOGsCJYhW3/cDZmeuY7BdrHPtnDcRMxjg+xOz9yb0ktjmechLk92DuBtQpzlnPFvNk+fqzFlyLsKAjHHb0ROb881mGhNb+rPHmWiAHndsDgbX393dMg+gb1UsZvLJXpp9+3DiLJcrvhkBA4iuSxw1WYXmKlveDszPleB/o3sA0wPf4Tnpw49Efw7cgYN/ZIrDNUD/n88D53hC6hFnU7tx1rTuQeYeEHsP7AtoREwcIOFszV2CvHHmMcDXatJidU7JQWIq4Udfvv1gfsv/ry/OtmojAAAAAAAAAAAAAAAAgFiKa1HM+8d9xtOuB1jtjtuD3huIsdoJ8XoVyve7YzLgpPtVaI9h32mAuYxcDAMYog//LzvVnoLlxlq8mAkhyuWK6UEx75YrXewB5UaIavfy7DMZT83Fy1W5XEkbWNZ2rKl0tAmXm5fHp6N8dBuSe3gx77doSUcNcNac9XZklHv1nqygvBMtHrDXBZXPB6Ory+HHzx8ID84HI1/+Rtnp9A8lKBXZq13dgqpC1c4sO+1dgvYN0FP7fDCy22whLgPqB7HX7HvmazbHbICh9f1z5Sgv4lKp//P7496yYT+Q+EIIIR6eLnxmd0H9lm/A/XNlpL+d+OvB2Xpwxkpqv/rr7eh8MJL7y06e3EWOrQnLvLYTczKefpJvz5Vck5H1diT3fGnC1a6Y98v37bSB1gz4+f3RWRCk+qrUJKtvFB8n5ebVg9+3CRsqG81A9QmnWz6VafX135Wbl+c3LUHOC3H/XF1dDj9+/uAUfb0d/ffPq4IPTxd///XVJ70+VfNKNcRJi/+W+uqKKMVVbyCckDb4kl1JL7Pb2BkGeBXXNfI1CY4N0oAWa8vbMIDOTY4Bug12jwURNjjlluPEo68proV8wIE8sBdAxsx1ibDBmJqMp5Px1P7KOQ5qeUB4o2vtHAS1PCBqly630RvkCK5C4x4EmzYMaNCDoPpo0YeuRWkugkCRCXZmolGjBOWxwU5zIsFRhVq7HxC9HQ+Q7+0XKEgBAAAAAAAAAAAAAAAAAAAAAABCCHFS5+NiMZMv5XLlnCqXK32N7z1qTwWxwP6XWizf9RFOzHKxEZtzk0NjiGIP2u9qJPitMW5sRX/OjCG4hojZF2oUp80Zkxw0vYZ/7FiBfDE3Sq+JTZ0X1lc3fJ+nzaatdMYc9CBL/al1A4jrbJRd35X3lRF7XAmkZoPnNzLaLvFEzERZO/wtAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQwS/PxdzjjONJpQAAABB0RVh0TG9kZVBORwAyMDExMDIyMeNZtsEAAAAASUVORK5CYII=");
 	-repeat center;
 	-webkit-background-size:cover; -moz-background-size:cover; -o-background-size:cover; background-size:cover;
 }
